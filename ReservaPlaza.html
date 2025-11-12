@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reserva de plaza Polideportivo Miguelito</title>
+</head>
+
+<body>
+    <h1>Reserva de plaza Polideportivo Miguelito</h1>
+
+    <form action="#" method="post" novalidate>
+        <fieldset>
+            <legend>Datos del participante</legend>
+
+            <p>
+                <label for="nombre">Nombre y apellido:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Pérez" required>
+            </p>
+
+            <p>
+                ¿Es miembro del club?<br>
+                <label>
+                    <input type="radio" name="miembro" value="si" checked> Miembro
+                </label>
+                <label>
+                    <input type="radio" name="miembro" value="no"> No-miembro
+                </label>
+            </p>
+
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos de la reserva</legend>
+
+            <p>
+                <label for="deporte">Deporte:</label>
+                <select id="deporte" name="deporte" required>
+                    <option value="padel">Pádel</option>
+                    <option value="futbol_sala">Fútbol sala</option>
+                    <option value="tenis">Tenis</option>
+                    <option value="baloncesto">Baloncesto</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="fecha">Seleccionar fecha de la reserva:</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </p>
+
+            <p>
+                <label for="hora">Seleccionar hora de la reserva:</label>
+                <input type="time" id="hora" name="hora" required>
+            </p>
+
+            <p>
+                <label>
+                    <input type="checkbox" id="acepto" name="acepto" required>
+                    Acepto las normas del club
+                </label>
+            </p>
+        </fieldset>
+
+        <p>
+            <button type="submit">Enviar</button>
+        </p>
+    </form>
+</body>
+
+</html>
