@@ -8,19 +8,19 @@
 </head>
 
 <body>
-    <h1>Reserva de plaza Polideportivo Miguelito</h1>
+    <h1><strong>Reserva de plaza Polideportivo Miguelito</strong></h1>
 
     <form action="#" method="post" novalidate>
         <fieldset>
-            <legend>Datos del participante</legend>
+            <legend><strong>Datos del participante</strong></legend>
 
             <p>
-                <label for="nombre">Nombre y apellido:</label>
+                <label for="nombre"><strong>Nombre y apellido:</strong></label>
                 <input type="text" id="nombre" name="nombre" required>
             </p>
 
             <p>
-                ¿Es miembro del club?<br>
+                <strong>¿Es miembro del club?</strong><br>
                 <label>
                     <input type="radio" name="miembro" value="si" checked> Miembro
                 </label>
@@ -30,16 +30,16 @@
             </p>
 
             <p>
-                <label for="email">Email:</label>
+                <label for="email"><strong>Email:</strong></label>
                 <input type="email" id="email" name="email" required>
             </p>
         </fieldset>
 
         <fieldset>
-            <legend>Datos de la reserva</legend>
+            <legend><strong>Datos de la reserva</strong></legend>
 
             <p>
-                <label for="deporte">Deporte:</label>
+                <label for="deporte"><strong>Deporte:</strong></label>
                 <select id="deporte" name="deporte" required>
                     <option value="padel">Pádel</option>
                     <option value="futbol_sala">Fútbol sala</option>
@@ -49,26 +49,29 @@
                 </select>
             </p>
 
-            <p>
-                <label for="fecha">Seleccionar fecha de la reserva:</label>
-                <input type="date" id="fecha" name="fecha" required>
-            </p>
+            <p><strong>Seleccionar fecha y hora de la reserva:</strong></p>
 
-            <p>
-                <label for="hora">Seleccionar hora de la reserva:</label>
-                <input type="time" id="hora" name="hora" required>
-            </p>
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </td>
+                    <td style="padding-left:4px;">
+                        <input type="time" id="hora" name="hora" required>
+                    </td>
+                </tr>
+            </table>
 
             <p>
                 <label>
                     <input type="checkbox" id="acepto" name="acepto" required>
-                    Acepto las normas del club
+                    <strong>Acepto las normas del club</strong>
                 </label>
             </p>
         </fieldset>
 
         <p>
-            <button type="submit">Enviar</button>
+            <button type="submit"><strong>Enviar</strong></button>
         </p>
     </form>
 </body>
