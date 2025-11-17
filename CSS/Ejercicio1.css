@@ -1,0 +1,39 @@
+/* Actividad 1 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: Roboto, system-ui, Arial;
+    padding: 2rem;
+    background: #f7f9fc
+}
+
+#tarjeta {
+    background: #f0f4ff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 420px
+}
+
+h2.titulo {
+    color: #1e3799;
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem
+}
+
+#tarjeta p {
+    margin-top: 10px
+}
+
+a[target="_blank"] {
+    color: #4a69bd;
+    font-weight: 700;
+    text-decoration: none
+}
+
+a[target="_blank"]:hover {
+    opacity: .85
+}

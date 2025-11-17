@@ -1,0 +1,51 @@
+/* Actividad 3 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: Roboto, system-ui, Arial;
+    padding: 2rem;
+    background: #f7f9fc
+}
+
+.presentacion {
+    background: linear-gradient(135deg, rgba(26, 115, 232, .9), rgba(74, 141, 227, .8));
+    padding: 2rem;
+    border-radius: 12px;
+    color: #fff;
+    max-width: 720px
+}
+
+.presentacion h2 {
+    font-family: serif;
+    font-size: 1.6rem;
+    margin-bottom: .35rem
+}
+
+.presentacion h2+p {
+    margin-top: .6rem;
+    font-family: Arial, sans-serif
+}
+
+.presentacion ul {
+    list-style: circle;
+    margin-top: 1rem;
+    padding-left: 1.1rem;
+    color: #222
+}
+
+.presentacion li {
+    display: inline-block;
+    padding: .15rem .25rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .06);
+    margin-right: .4rem;
+    transition: color .12s
+}
+
+.presentacion li:hover {
+    color: #4a8de3
+}

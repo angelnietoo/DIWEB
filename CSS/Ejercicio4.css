@@ -1,0 +1,52 @@
+/* Actividad 4 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: Roboto, system-ui, Arial;
+    padding: 2rem;
+    background: #f7f9fc
+}
+
+#adaptable {
+    background: #74b9ff;
+    padding: 20px;
+    margin: 1.2em;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .08);
+    max-width: 680px
+}
+
+#adaptable h3 {
+    margin-bottom: .6rem
+}
+
+#adaptable p {
+    font-size: .98rem
+}
+
+@media(max-width:500px) {
+    #adaptable {
+        background: #ff7675
+    }
+
+    main {
+        display: block
+    }
+}
+
+@media print {
+    #adaptable {
+        background: #fff;
+        border: 1px solid #000;
+        color: #000;
+        -webkit-print-color-adjust: exact
+    }
+
+    .card {
+        box-shadow: none
+    }
+}
