@@ -33,15 +33,6 @@ body {
     padding-left: 1.1em
 }
 
-.nombre::before {
-    content: '\2022';
-    position: absolute;
-    left: 0;
-    top: 0.15em;
-    font-size: 1.25em;
-    color: var(--principal)
-}
-
 #perfil p {
     color: rgba(0, 0, 0, 0.8);
     margin-top: .6rem
@@ -52,7 +43,6 @@ body {
     margin-top: .8rem;
     padding: .55rem .9rem;
     border-radius: 8px;
-    background: var(--acento);
     color: #111;
     text-decoration: none;
     font-weight: 600
