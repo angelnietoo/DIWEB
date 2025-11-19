@@ -1,4 +1,4 @@
-/* Ejercicio3.css — centrado en la web */
+/* Ejercicio3.css — sin puntos delante de párrafos ni items */
 * {
     margin: 0;
     padding: 0;
@@ -11,78 +11,70 @@ body {
 }
 
 body {
-    /* centrar la sección en la pantalla */
     display: flex;
     align-items: center;
     justify-content: center;
-
-    /* estilos de fondo y espaciado */
     background: #f0f4f8;
     min-height: 100vh;
     padding: 2rem;
     font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
-/* contenedor centrado y responsivo */
+/* contenedor centrado con imagen de fondo y overlay */
 .presentacion {
     width: 100%;
     max-width: 760px;
-    /* anchura máxima tal y como tenías */
     box-sizing: border-box;
     padding: 2rem;
     border-radius: 12px;
     color: white;
-
-    /* imagen de fondo con overlay (imagen de Lorem Picsum) */
+    margin: 0 auto;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
         url('https://picsum.photos/1200/800');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-
-    /* para que el contenido no se pegue a los bordes en pantallas pequeñas */
-    margin: 0 auto;
 }
 
-/* tipografía y espaciados internos */
+/* título y párrafo */
 .presentacion h2 {
     font-family: 'Lora', serif;
-    color: #b84242;
+    color: #9b2929;
     margin-bottom: 0.4rem;
-    font-size: 25px;
+    font-size: 1.6rem;
 }
 
-/* selector hermano adyacente */
-.presentacion h2+p {
-    margin-top: 1rem;
-    color: rgba(165, 53, 53, 0.95);
-    font-size: 16px;
+.presentacion p {
+    margin-top: 0.6rem;
+    color: #9b2929;
+    line-height: 1.5;
 }
 
-/* tarjeta blanca dentro (lista) */
+/* ---------- Aquí la corrección importante ---------- */
+/* Quitamos los marcadores por defecto y reseteamos padding/margen */
 .presentacion ul {
-    list-style: disc inside;
-    margin-top: 1rem;
-    color: #222;
-    padding-left: 1rem;
+    list-style: none;
+    /* sin puntos */
+    margin: 1rem 0 0 0;
+    /* separación respecto al párrafo */
+    padding: 0;
+    /* quitar sangría por defecto */
     background: rgba(255, 255, 255, 0.9);
     display: inline-block;
+    /* mantiene aspecto de 'tarjeta' */
     border-radius: 8px;
     padding: 0.6rem 1rem;
+    color: #222;
 }
 
+/* items sin puntos y con espaciado */
 .presentacion ul li {
-    font-family: 'Poppins', sans-serif;
     margin: 0.35rem 0;
+    padding-left: 0;
 }
 
-.presentacion ul li:hover {
-    color: #4a8de3;
-    cursor: default;
-}
-
-/* ajustes para pantallas muy pequeñas */
+/* responsivo */
 @media (max-width:480px) {
     .presentacion {
         padding: 1rem;
