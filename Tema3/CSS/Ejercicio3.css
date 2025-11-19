@@ -1,51 +1,96 @@
-/* Actividad 3 */
+/* Ejercicio3.css — centrado en la web */
 * {
-    box-sizing: border-box;
     margin: 0;
-    padding: 0
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
 }
 
 body {
-    font-family: Roboto, system-ui, Arial;
+    /* centrar la sección en la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* estilos de fondo y espaciado */
+    background: #f0f4f8;
+    min-height: 100vh;
     padding: 2rem;
-    background: #f7f9fc
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
+/* contenedor centrado y responsivo */
 .presentacion {
-    background: linear-gradient(135deg, rgba(26, 115, 232, .9), rgba(74, 141, 227, .8));
+    width: 100%;
+    max-width: 760px;
+    /* anchura máxima tal y como tenías */
+    box-sizing: border-box;
     padding: 2rem;
     border-radius: 12px;
-    color: #fff;
-    max-width: 720px
+    color: white;
+
+    /* imagen de fondo con overlay (imagen de Lorem Picsum) */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url('https://picsum.photos/1200/800');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    /* para que el contenido no se pegue a los bordes en pantallas pequeñas */
+    margin: 0 auto;
 }
 
+/* tipografía y espaciados internos */
 .presentacion h2 {
-    font-family: serif;
-    font-size: 1.6rem;
-    margin-bottom: .35rem
+    font-family: 'Lora', serif;
+    color: #b84242;
+    margin-bottom: 0.4rem;
+    font-size: 25px;
 }
 
+/* selector hermano adyacente */
 .presentacion h2+p {
-    margin-top: .6rem;
-    font-family: Arial, sans-serif
-}
-
-.presentacion ul {
-    list-style: circle;
     margin-top: 1rem;
-    padding-left: 1.1rem;
-    color: #222
+    color: rgba(165, 53, 53, 0.95);
+    font-size: 16px;
 }
 
-.presentacion li {
+/* tarjeta blanca dentro (lista) */
+.presentacion ul {
+    list-style: disc inside;
+    margin-top: 1rem;
+    color: #222;
+    padding-left: 1rem;
+    background: rgba(255, 255, 255, 0.9);
     display: inline-block;
-    padding: .15rem .25rem;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, .06);
-    margin-right: .4rem;
-    transition: color .12s
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
 }
 
-.presentacion li:hover {
-    color: #4a8de3
+.presentacion ul li {
+    font-family: 'Poppins', sans-serif;
+    margin: 0.35rem 0;
+}
+
+.presentacion ul li:hover {
+    color: #4a8de3;
+    cursor: default;
+}
+
+/* ajustes para pantallas muy pequeñas */
+@media (max-width:480px) {
+    .presentacion {
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .presentacion ul {
+        display: block;
+        width: 100%;
+    }
 }
