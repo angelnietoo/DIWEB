@@ -1,0 +1,104 @@
+/* styles.css */
+:root{
+--bg: #f6f8fb;
+--card: #ffffff;
+--text: #222831;
+--muted: #586069;
+--accent: #0d6efd;
+--radius: 12px;
+--shadow: 0 6px 18px rgba(35,47,60,0.08);
+--container-width: 1100px;
+}
+
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+margin:0;
+font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+background:var(--bg);
+color:var(--text);
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+line-height:1.5;
+}
+
+
+.container{
+max-width:var(--container-width);
+margin:0 auto;
+padding:1.25rem;
+}
+
+
+.site-header{
+background:linear-gradient(90deg, rgba(13,110,253,0.08), rgba(0,0,0,0));
+padding:1.25rem 0;
+border-bottom:1px solid rgba(0,0,0,0.04);
+}
+.site-header h1{
+margin:0 0 0.25rem 0;
+font-size:1.75rem;
+}
+.subtitle{margin:0;color:var(--muted)}
+
+
+.main-nav{
+margin-top:0.75rem;
+display:flex;gap:0.5rem;flex-wrap:wrap;
+}
+.main-nav a{
+text-decoration:none;
+padding:0.4rem 0.6rem;
+border-radius:8px;
+font-size:0.9rem;
+color:var(--accent);
+background:transparent;
+}
+.main-nav a:hover{background:rgba(13,110,253,0.06)}
+
+
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem;margin:1rem 0}
+
+
+.card h2{margin-top:0}
+
+
+table{width:100%;border-collapse:collapse;margin-top:.5rem}
+th,td{padding:0.65rem;border-bottom:1px solid rgba(0,0,0,0.06);text-align:left}
+th{background:transparent;font-weight:600}
+
+
+.calendar-list{list-style:none;padding:0;margin:0}
+.calendar-list li{padding:.35rem 0;border-bottom:1px dashed rgba(0,0,0,0.03)}
+
+
+.help-card{position:sticky;top:1rem;margin-top:1rem;padding:0.9rem;background:linear-gradient(180deg,#fff, #fbfdff);border-radius:10px;box-shadow:var(--shadow)}
+
+
+.site-footer{padding:1rem 0;color:var(--muted);font-size:0.9rem;text-align:center}
+
+
+/* Layout responsivo */
+@media (min-width:900px){
+main.container{display:grid;grid-template-columns:1fr 320px;gap:1rem;align-items:start}
+.card{margin:0 0 1rem 0}
+.help-card{margin:0}
+}
+
+
+@media (max-width:899px){
+.main-nav{gap:.35rem}
+}
+
+
+/* Accesibilidad y print */
+@media print{
+body{background:white;color:black}
+.main-nav, .help-card{display:none}
+.card{box-shadow:none;border:1px solid #eee}
+}
+
+
+/* Pequeños detalles */
+kbd{background:#eee;border-radius:4px;padding:2px 6px;font-size:0.85em}
