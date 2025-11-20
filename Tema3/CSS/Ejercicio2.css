@@ -1,4 +1,3 @@
-/* Actividad 2 - CSS centrado */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,11 +17,7 @@ body {
     /* CENTRADO */
     display: flex;
     align-items: center;
-    /* centra verticalmente */
     justify-content: center;
-    /* centra horizontalmente */
-
-    /* garantiza que ocupe la altura completa en pantallas pequeñas */
     min-height: 100vh;
 }
 
@@ -41,11 +36,10 @@ body {
     width: 100%;
     /* para que sea responsiva */
     margin: 0 auto;
-    /* por si se usa en flujo normal */
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-/* nombre con punto decorativo (mejor que usar padding-left solo) */
+/* nombre */
 .nombre {
     color: var(--principal);
     font-size: 1.5em;
