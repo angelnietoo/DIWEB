@@ -1,30 +1,66 @@
-<!-- index.html -->
-<a class="ej-btn" href="Tema4/JavaScript6.html">Ejercicio 6 — Botones</a>
-<a class="ej-btn" href="Tema4/JavaScript7.html">Ejercicio 7 — Focus y eliminar párrafos</a>
-<a class="ej-btn" href="Tema4/EJ2_JavaScript.html">Ejercicio 8 — Pares e impares</a>
-<a class="ej-btn" href="Tema4/EJ3_Calculadora.html">Ejercicio 9 — Calculadora</a>
-<a class="ej-btn" href="Tema4/Formulario IA">Ejercicio 10 — Formulario IA</a>
-<a class="ej-btn" href="Tema4/Empleados">Ejercicio 11 — Tabla empleados</a>
-<a class="ej-btn" href="Tema4/Formulario Matricula">Ejercicio 12 — Formulario Matrícula</a>
-</div>
-</article>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Índice de Ejercicios — Ángel Nieto C.</title>
 
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
 
-<article data-module="lenguaje" id="tema5" class="topic" tabindex="0">
-<h3>TEMA 5: Animaciones & Utilidades</h3>
-<div class="grid">
-<a class="ej-btn" href="AnimationQuery.html">Animación JQuery</a>
-<a class="ej-btn" href="Nota_JS.html">Cálculo de nota</a>
-</div>
-</article>
+  <!-- Tu styles.css -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main aria-label="Índice de ejercicios" style="padding:14px">
+    <header style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
+      <div>
+        <h1 style="margin:0">Índice de Ejercicios</h1>
+        <p class="small-muted" style="margin:4px 0 0 0">ÁNGEL NIETO CORDERO — Lenguajes & Frontend</p>
+      </div>
+      <div>
+        <small class="small-muted">1º/2º DAW</small>
+      </div>
+    </header>
 
+    <div class="page" id="pageRoot">
 
-<!-- TEMAS CLIENTE (2º) -->
-<article data-module="cliente" id="cliente_tema1" class="topic" tabindex="0">
-<h3>TEMA 1 — HTML Y CSS</h3>
-<div class="grid">
-<a class="ej-btn" href="Tema3/HTML/Ejercicio1.html">Ejercicio Map 1</a>
-<a class="ej-btn" href="Tema3/HTML/Ejercicio2.html">Ejercicio Map 2</a>
-<a class="ej-btn" href="Tema3/HTML/Ejercicio3.html">Ejercicio Map 3</a>
-</div>
-</article>
+      <!-- SIDEBAR: módulos -->
+      <aside>
+        <nav class="module-list" role="tablist" aria-label="Módulos">
+          <div class="search-inline">
+            <input id="searchBox" type="search" placeholder="Buscar tema o ejercicio..." aria-label="Buscar">
+          </div>
+          <!-- Botón de módulo: coincide con data-module="lenguaje" usado en las tarjetas -->
+          <button class="module-btn" role="tab" aria-pressed="true" data-module="lenguaje">Desarrollo de interfaces web — 2º DAW</button>
+        </nav>
+      </aside>
+
+      <!-- CLIENTE: tema 1 (pertenece al módulo "lenguaje") -->
+      <article class="topic-card" data-module="lenguaje" id="cliente_tema1" aria-expanded="true">
+        <div class="topic-header" tabindex="0">
+          <h3>TEMA 1 — HTML Y CSS</h3>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <div class="topic-body">
+          <div class="grid">
+            <!-- RUTAS NORMALIZADAS: ajusta si tus ficheros están en otra carpeta -->
+            <a class="ej-btn" href="./Tema3/HTML/Ejercicio1.html">Ejercicio Map 1</a>
+            <a class="ej-btn" href="./Tema3/HTML/Ejercicio2.html">Ejercicio Map 2</a>
+            <a class="ej-btn" href="./Tema3/HTML/Ejercicio3.html">Ejercicio Map 3</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PREVIEW / DETALLES -->
+      <aside class="preview" id="preview">
+        <h4>Vista rápida</h4>
+        <p class="small-muted" id="previewText">Selecciona un tema para ver descripción y ejercicios.</p>
+        <div id="previewList" style="margin-top:10px"></div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
