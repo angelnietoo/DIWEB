@@ -1,0 +1,333 @@
+/* ===========================
+   Acordeón + preview — CSS corregido
+   =========================== */
+
+/* Reset/base útiles */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--text, #0f1724);
+  background: var(--bg, #f7f9fb);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Variables (añadidas las que faltaban y tonos neutrales) */
+:root{
+  --page-gap: 20px;
+  --card-pad: 16px;
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --shadow-lg: 0 18px 50px rgba(12, 40, 80, 0.08);
+  --shadow-sm: 0 6px 18px rgba(12, 40, 80, 0.06);
+  --glass: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,252,255,0.95));
+  --muted-2: rgba(15,23,32,0.45);
+
+  /* VARIABLES AÑADIDAS */
+  --accent: #0b76d1;       /* color principal (azul claro) */
+  --accent-2: #0654a8;     /* color alterno/oscuro */
+  --card: #ffffff;         /* fondo de tarjetas */
+  --muted: #6b7280;        /* texto secundario */
+  --text: #0f1724;         /* color de texto principal */
+  --bg: #f6f9fc;           /* fondo de la página */
+}
+
+/* ---- Layout principal ---- */
+.page {
+  display: grid;
+  grid-template-columns: 260px 1fr 320px;
+  gap: var(--page-gap);
+  padding: 22px;
+  max-width: 1400px;
+  margin: 22px auto;
+  align-items: start;
+  background: transparent;
+}
+
+/* ---- Módulos / sidebar (izquierda) ---- */
+.module-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: transparent;
+}
+
+.module-btn {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(15, 23, 32, 0.06);
+  background: var(--glass);
+  cursor: pointer;
+  font-weight: 800;
+  text-align: left;
+  color: var(--accent-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s;
+  gap: 8px;
+}
+.module-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+}
+.module-btn[aria-pressed="true"] {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(11,118,209,0.18);
+  background: linear-gradient(90deg, rgba(11,118,209,0.06), rgba(6,102,177,0.02));
+}
+
+/* Decoración pequeña: punto de color a la izquierda */
+.module-btn::before{
+  content: "";
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border-radius:3px;
+  background: linear-gradient(180deg,var(--accent),var(--accent-2));
+  margin-right:12px;
+  flex-shrink:0;
+  box-shadow: 0 6px 14px rgba(11,118,209,0.12);
+}
+
+/* foco accesible (mejor usar focus-visible) */
+.module-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(11,118,209,0.08);
+  border-color: rgba(11,118,209,0.14);
+}
+
+/* ---- Búsqueda integrada ---- */
+.search-inline {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  align-items: center;
+}
+.search-inline input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 32, 0.06);
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 4px 14px rgba(12,40,80,0.03) inset;
+  transition: box-shadow .12s, border-color .12s;
+}
+.search-inline input:focus {
+  outline: none;
+  border-color: rgba(11,118,209,0.18);
+  box-shadow: 0 6px 18px rgba(11,118,209,0.06);
+}
+
+/* ---- Acordeón (centro) ---- */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 12px;
+}
+
+/* tarjeta del tema */
+.topic-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(15, 23, 32, 0.04);
+  overflow: hidden;
+  transition: transform .16s cubic-bezier(.2,.9,.2,1), box-shadow .16s;
+  will-change: transform;
+}
+.topic-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* header clicable del tema */
+.topic-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(250,252,255,0.6), rgba(248,250,252,0.2));
+  border-bottom: 1px solid rgba(15,23,32,0.03);
+}
+.topic-header h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  letter-spacing: .2px;
+}
+.topic-meta {
+  font-size: .88rem;
+  color: var(--muted-2);
+  margin-top: 6px;
+}
+
+/* cuerpo del tema: se muestra cuando aria-expanded="true" */
+.topic-body {
+  padding: 14px 18px 18px;
+  display: none;
+  animation: fadeIn .22s ease both;
+}
+.topic-card[aria-expanded="true"] .topic-body{
+  display:block;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,252,255,0.98));
+}
+
+/* chevrón rotatorio */
+.chev {
+  width: 18px;
+  height: 18px;
+  transform: rotate(0);
+  transition: transform .18s ease;
+  color: var(--accent-2);
+}
+.topic-card[aria-expanded="true"] .chev {
+  transform: rotate(180deg);
+}
+
+/* ---- Grid de ejercicios ---- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.ej-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 800;
+  border: 1px solid rgba(11, 118, 209, 0.08);
+  background: linear-gradient(180deg, rgba(11, 118, 209, 0.06), rgba(11,118,209,0.02));
+  color: #033e73; /* ligeramente más oscuro para contraste */
+  transition: transform .16s cubic-bezier(.2,.9,.2,1), box-shadow .16s;
+  box-shadow: 0 6px 18px rgba(6,102,177,0.04);
+}
+.ej-btn:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(6,102,177,0.08);
+}
+.ej-btn:active {
+  transform: translateY(-2px);
+}
+.ej-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(11,118,209,0.08);
+}
+
+/* añadir pequeño icono de chevron/punto por pseudo-elemento */
+.ej-btn::before {
+  content: "";
+  width:10px;
+  height:10px;
+  border-radius:3px;
+  background: linear-gradient(180deg,var(--accent),var(--accent-2));
+  box-shadow: 0 6px 14px rgba(11,118,209,0.12);
+  flex-shrink:0;
+}
+
+/* ---- Preview / panel derecho ---- */
+.preview {
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(15, 23, 32, 0.04);
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+  min-height: 220px;
+  position: sticky;
+  top: 22px;
+  box-shadow: var(--shadow-sm);
+}
+.preview h4 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+.preview .meta {
+  color: var(--muted-2);
+  font-size: 0.92rem;
+  margin-bottom: 10px;
+}
+
+/* Soportar tanto .preview-list como #previewList (tu HTML usa id=previewList) */
+.preview-list,
+#previewList {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-top:10px;
+}
+
+/* estilo para los enlaces dentro del preview */
+.preview-list a,
+#previewList a {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 10px;
+  border-radius:10px;
+  text-decoration:none;
+  color: var(--accent-2);
+  background: linear-gradient(180deg, rgba(11,118,209,0.04), rgba(11,118,209,0.01));
+  border: 1px solid rgba(11,118,209,0.04);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.preview-list a:hover,
+#previewList a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(6,102,177,0.06);
+}
+
+/* ---- Animaciones / keyframes ---- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1100px) {
+  .page { grid-template-columns: 1fr; padding: 16px; }
+  .preview { order: 3; position: relative; top: auto; }
+  .module-list {
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow: auto;
+    padding: 8px;
+  }
+  .accordion { order: 2; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; }
+  .topic-header { padding: 12px; }
+  .module-btn::before { display:none; }
+  .module-btn { padding:10px; font-size:0.95rem; }
+  .preview { display:none; } /* ahorrar espacio en móvil */
+}
+
+/* ---- Accesibilidad / usuarios con preferencia de movimiento reducido ---- */
+:focus-visible { outline: 3px solid rgba(11, 118, 209, 0.12); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .topic-card,
+  .ej-btn,
+  .chev,
+  .module-btn {
+    transition: none !important;
+    animation: none !important;
+  }
+}

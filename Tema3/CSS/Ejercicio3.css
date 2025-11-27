@@ -1,4 +1,3 @@
-/* Ejercicio3.css — sin puntos delante de párrafos ni items */
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +19,7 @@ body {
     font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
-/* contenedor centrado con imagen de fondo y overlay */
+/* contenedor centrado con imagen de fondo */
 .presentacion {
     width: 100%;
     max-width: 760px;
@@ -29,6 +28,7 @@ body {
     border-radius: 12px;
     color: white;
     margin: 0 auto;
+    position: relative;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
         url('https://picsum.photos/1200/800');
@@ -51,26 +51,21 @@ body {
     line-height: 1.5;
 }
 
-/* ---------- Aquí la corrección importante ---------- */
-/* Quitamos los marcadores por defecto y reseteamos padding/margen */
 .presentacion ul {
     list-style: none;
-    /* sin puntos */
-    margin: 1rem 0 0 0;
-    /* separación respecto al párrafo */
-    padding: 0;
-    /* quitar sangría por defecto */
-    background: rgba(255, 255, 255, 0.9);
-    display: inline-block;
-    /* mantiene aspecto de 'tarjeta' */
+    margin: 1rem auto 0;
+    display: block;
+    width: 100%;                /* ancho de recuadro blanco */
+    max-width: 640px;          /* evito que se pase demasiado en pantallas grandes */
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 8px;
-    padding: 0.6rem 1rem;
+    padding: 0.8rem 1.25rem;
     color: #222;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* items sin puntos y con espaciado */
 .presentacion ul li {
-    margin: 0.35rem 0;
+    margin: 0.35rem 12px;
     padding-left: 0;
 }
 
@@ -84,5 +79,9 @@ body {
     .presentacion ul {
         display: block;
         width: 100%;
+        margin-left: 0;    
+        margin-right: 0;
+        box-shadow: none;
+        padding: 0.6rem 0.8rem;
     }
 }
