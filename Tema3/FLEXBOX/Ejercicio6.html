@@ -1,0 +1,75 @@
+<!-- actividad6.html -->
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Actividad 6 - Card set</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+
+        .cardset {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            width: 240px;
+            background: white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .card .title {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0e7c74;
+            color: white;
+        }
+
+        .card .body {
+            padding: 12px;
+            flex: 1;
+        }
+
+        .card .footer {
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e9f7f6;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="cardset">
+        <div class="card">
+            <div class="title">Título 1</div>
+            <div class="body">Cuerpo que determina la altura.</div>
+            <div class="footer">Pie</div>
+        </div>
+        <div class="card">
+            <div class="title">Título 2</div>
+            <div class="body">Otro contenido que puede ser más largo y aumentar altura.</div>
+            <div class="footer">Pie</div>
+        </div>
+        <div class="card">
+            <div class="title">Título 3</div>
+            <div class="body">Contenido.</div>
+            <div class="footer">Pie</div>
+        </div>
+    </section>
+</body>
+
+</html>

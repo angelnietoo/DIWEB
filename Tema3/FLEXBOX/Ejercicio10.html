@@ -1,0 +1,85 @@
+<!-- actividad10.html -->
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Actividad 10 - Mi página completa</title>
+    <style>
+        :root {
+            --accent: #0e7c74;
+        }
+
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .layout {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .sidebar {
+            width: 240px;
+            background: #e9f7f6;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+
+        .main {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            background: #f8f8f8;
+        }
+
+        @media (max-width:800px) {
+            .layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                order: 2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">MiSitio</div>
+        <nav>Menú</nav>
+        <div>Entrar</div>
+    </header>
+    <div class="layout">
+        <aside class="sidebar">
+            <ul>
+                <li>Inicio</li>
+                <li>Servicios</li>
+                <li>Contactos</li>
+            </ul>
+        </aside>
+        <main class="main">
+            <h1>Bienvenido</h1>
+            <p>Contenido principal</p>
+        </main>
+    </div>
+</body>
+
+</html>

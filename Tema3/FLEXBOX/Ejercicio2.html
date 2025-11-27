@@ -1,0 +1,60 @@
+<!-- actividad2.html -->
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Actividad 2 - Menú vertical</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+        }
+
+        .sidebar {
+            background: rgba(123, 198, 199, 0.8);
+            display: flex;
+            align-items: flex-start;
+            padding: 12px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar li {
+            padding: 8px 16px;
+            white-space: nowrap;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .content {
+            padding: 20px;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Categoría larga</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </aside>
+    <main class="content">
+        <h1>Contenido</h1>
+        <p>Página de ejemplo.</p>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!-- actividad3.html -->
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Actividad 3 - Sidebar 1:4</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .wrap {
+            display: flex;
+            gap: 2px;
+            height: 100vh;
+        }
+
+        .sidebar {
+            flex: 1;
+            padding: 12px 24px;
+            background: #f1f1f1;
+            box-sizing: border-box;
+        }
+
+        .content {
+            flex: 4;
+            padding: 12px 24px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+
+        /* Estética */
+        .sidebar h2,
+        .content h1 {
+            margin: 0 0 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Enlaces y mini info...</p>
+        </aside>
+        <section class="content">
+            <h1>Zona de contenido</h1>
+            <p>Texto principal a la derecha del sidebar.</p>
+        </section>
+    </div>
+</body>
+
+</html>

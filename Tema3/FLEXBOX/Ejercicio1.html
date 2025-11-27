@@ -1,0 +1,55 @@
+<!-- actividad1-con-gap.html -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Actividad 1 - Menú horizontal (con separación)</title>
+  <style>
+    body { margin:0; font-family: sans-serif; }
+
+    .topnav {
+      display:flex;
+      background: rgba(123,198,199,0.8);
+      width:100%;
+    }
+
+    /* Añadimos gap para crear separación en píxeles entre los elementos */
+    .topnav ul {
+      list-style:none;
+      margin:0;
+      padding:8px;     /* opcional: espacio lateral para que el gap no quede contra el borde */
+      display:flex;
+      width:100%;
+      gap:8px;         /* <-- separación en píxeles entre enlaces (ajusta aquí) */
+      box-sizing:border-box;
+    }
+
+    /* Cada li sigue ocupando el espacio disponible */
+    .topnav li { flex:1; text-align:center; }
+
+    /* Si quieres que la separación sea visible (espacio entre "cajas"), dale fondo a los enlaces */
+    .topnav a{
+      display:block;
+      padding:14px 10px;
+      text-decoration:none;
+      color:#000;
+      background: rgba(255,255,255,0.12); /* opcional: hace visible la separación */
+      border-radius:6px;                   /* opcional: estética */
+    }
+
+    .topnav a:hover { background: rgba(0,0,0,0.08); }
+  </style>
+</head>
+<body>
+  <nav class="topnav">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Productos</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

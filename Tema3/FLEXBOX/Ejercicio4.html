@@ -1,0 +1,70 @@
+<!-- actividad4.html -->
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Actividad 4 - Sidebar menu 1:8</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            flex: 1;
+            background: #e9f7f6;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .content {
+            flex: 8;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 12px 8px;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Usuarios</a></li>
+                <li><a href="#">Ajustes</a></li>
+                <li><a href="#">Informes</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <h1>Contenido principal</h1>
+            <p>Área derecha</p>
+        </main>
+    </div>
+</body>
+
+</html>

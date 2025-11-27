@@ -1,0 +1,78 @@
+<!-- actividad5.html -->
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Actividad 5 - Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            background: #f5f5f5;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            width: 320px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            background: white;
+        }
+
+        .card .header,
+        .card .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+
+        .card .header {
+            background: #0e7c74;
+            color: white;
+            height: 56px;
+        }
+
+        .card .body {
+            padding: 16px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .card h4 {
+            margin: 0;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="card">
+        <div class="header">
+            <h2>Título de la tarjeta</h2>
+        </div>
+        <div class="body">
+            <p>Contenido: texto o imagen centrada.</p>
+        </div>
+        <div class="footer">
+            <h4>Pie de la tarjeta</h4>
+        </div>
+    </article>
+</body>
+
+</html>

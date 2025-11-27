@@ -1,0 +1,62 @@
+<!-- actividad7.html -->
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Actividad 7 - Dos columnas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            padding: 20px;
+            background: #0e7c74;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            gap: 12px;
+        }
+
+        .left {
+            flex: 2;
+            padding: 24px;
+            background: white;
+            box-sizing: border-box;
+        }
+
+        .right {
+            flex: 1;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-sizing: border-box;
+        }
+
+        .row {
+            flex: 1;
+            border: 1px solid lightgray;
+            padding: 12px;
+            box-sizing: border-box;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <h2>Columna izquierda (2 partes)</h2>
+            <p>Contenido amplio.</p>
+        </div>
+        <div class="right">
+            <div class="row">Fila 1 (mitad de altura derecha)</div>
+            <div class="row">Fila 2 (mitad de altura derecha)</div>
+        </div>
+    </div>
+</body>
+
+</html>
