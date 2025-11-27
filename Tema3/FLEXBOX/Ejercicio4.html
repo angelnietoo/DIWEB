@@ -1,11 +1,11 @@
-<!-- actividad4.html -->
+<!-- actividad4-flex.html -->
 <!doctype html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 4 - Sidebar menu 1:8</title>
+    <title>Actividad 4 - Sidebar menú 1:8 (flex)</title>
     <style>
         body {
             margin: 0;
@@ -18,15 +18,17 @@
         }
 
         .sidebar {
-            flex: 1;
-            background: #e9f7f6;
-            padding: 20px;
+            flex: 1 1 0;
+            /* relación 1 */
+            background: rgba(123, 198, 199, 0.8);
+            padding: 16px;
             box-sizing: border-box;
         }
 
         .content {
-            flex: 8;
-            padding: 20px;
+            flex: 8 1 0;
+            padding: 16px;
+            background: #fff;
             box-sizing: border-box;
         }
 
@@ -34,24 +36,27 @@
             list-style: none;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
 
         .sidebar li {
-            padding: 12px 8px;
-            border-bottom: 1px solid lightgray;
+            border-bottom: 1px solid gray;
         }
 
         .sidebar a {
+            display: block;
+            padding: 12px 8px;
             text-decoration: none;
             color: #000;
-            display: block;
         }
     </style>
 </head>
 
 <body>
     <div class="layout">
-        <aside class="sidebar">
+        <nav class="sidebar" aria-label="Barra lateral">
             <ul>
                 <li><a href="#">Dashboard</a></li>
                 <li><a href="#">Usuarios</a></li>
@@ -59,10 +64,10 @@
                 <li><a href="#">Informes</a></li>
                 <li><a href="#">Ayuda</a></li>
             </ul>
-        </aside>
+        </nav>
         <main class="content">
-            <h1>Contenido principal</h1>
-            <p>Área derecha</p>
+            <h1>Contenido</h1>
+            <p>Área derecha (8 partes).</p>
         </main>
     </div>
 </body>

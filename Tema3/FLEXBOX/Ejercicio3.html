@@ -1,11 +1,11 @@
-<!-- actividad3.html -->
+<!-- actividad3-flex.html -->
 <!doctype html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 3 - Sidebar 1:4</title>
+    <title>Actividad 3 - Sidebar 1:4 (flex)</title>
     <style>
         html,
         body {
@@ -16,25 +16,31 @@
 
         .wrap {
             display: flex;
+            /* contenedor flex principal */
             gap: 2px;
+            /* gap de 2px entre sidebar y contenido */
             height: 100vh;
+            /* alto viewport */
         }
 
         .sidebar {
-            flex: 1;
+            flex: 1 1 0;
+            /* proporción 1 */
             padding: 12px 24px;
-            background: #f1f1f1;
+            /* padding vertical 12px lateral 24px */
+            background: #f0f8f7;
             box-sizing: border-box;
         }
 
         .content {
-            flex: 4;
+            flex: 4 1 0;
+            /* proporción 4 (relación 1:4) */
             padding: 12px 24px;
-            background: #fff;
+            background: #ffffff;
             box-sizing: border-box;
         }
 
-        /* Estética */
+        /* pequeños estilos para diferenciar */
         .sidebar h2,
         .content h1 {
             margin: 0 0 12px;
@@ -46,11 +52,11 @@
     <div class="wrap">
         <aside class="sidebar">
             <h2>Sidebar</h2>
-            <p>Enlaces y mini info...</p>
+            <p>Enlaces y notas.</p>
         </aside>
         <section class="content">
-            <h1>Zona de contenido</h1>
-            <p>Texto principal a la derecha del sidebar.</p>
+            <h1>Contenido principal</h1>
+            <p>Texto de ejemplo a la derecha.</p>
         </section>
     </div>
 </body>

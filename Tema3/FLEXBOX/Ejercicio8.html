@@ -1,11 +1,11 @@
-<!-- actividad8.html -->
+<!-- actividad8-flex.html -->
 <!doctype html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 8 - Header</title>
+    <title>Actividad 8 - Header (flex)</title>
     <style>
         body {
             margin: 0;
@@ -16,6 +16,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 16px;
             padding: 12px 20px;
             background: #fff;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -23,18 +24,11 @@
 
         .logo {
             font-weight: 700;
-            font-size: 1.1rem;
         }
 
         nav {
             display: flex;
             gap: 12px;
-        }
-
-        nav a {
-            text-decoration: none;
-            padding: 8px 10px;
-            color: #333;
         }
 
         .auth {
@@ -52,7 +46,7 @@
 
         .btn.primary {
             background: #0e7c74;
-            color: white;
+            color: #fff;
             border-color: #0e7c74;
         }
     </style>
@@ -61,7 +55,7 @@
 <body>
     <header>
         <div class="logo">MiLogo</div>
-        <nav>
+        <nav aria-label="Navegación principal">
             <a href="#">Inicio</a>
             <a href="#">Servicios</a>
             <a href="#">Contacto</a>

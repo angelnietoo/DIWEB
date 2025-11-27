@@ -1,60 +1,84 @@
-<!-- actividad2.html -->
+<!-- actividad2-flex.html -->
 <!doctype html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 2 - Menú vertical</title>
+    <title>Actividad 2 - Menú vertical (flex + gap)</title>
     <style>
         body {
             margin: 0;
             font-family: sans-serif;
-            display: flex;
         }
 
-        .sidebar {
-            background: rgba(123, 198, 199, 0.8);
+        /* contenedor principal: usamos flex para layout */
+        .layout {
             display: flex;
+            min-height: 100vh;
             align-items: flex-start;
+        }
+
+        /* sidebar es flex column y usa gap para separación entre enlaces */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            /* menú vertical */
+            gap: 8px;
+            /* separación entre enlaces (ajusta si quieres) */
+            background: rgba(123, 198, 199, 0.8);
             padding: 12px;
+            /* espacio alrededor */
+            box-sizing: border-box;
+            width: max-content;
+            /* ancho = del item más ancho */
+            align-items: stretch;
         }
 
         .sidebar ul {
             list-style: none;
             margin: 0;
             padding: 0;
+            width: 100%;
             display: flex;
             flex-direction: column;
+            gap: 8px;
         }
 
-        .sidebar li {
-            padding: 8px 16px;
-            white-space: nowrap;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        .sidebar li {}
+
+        .sidebar a {
+            display: block;
+            padding: 10px 14px;
+            text-decoration: none;
+            color: #000;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 6px;
         }
 
-        .content {
-            padding: 20px;
+        main {
             flex: 1;
+            padding: 20px;
         }
     </style>
 </head>
 
 <body>
-    <aside class="sidebar">
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Categoría larga</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </aside>
-    <main class="content">
-        <h1>Contenido</h1>
-        <p>Página de ejemplo.</p>
-    </main>
+    <div class="layout">
+        <nav class="sidebar" aria-label="Menú vertical">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Categoría larga</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1>Área de contenido</h1>
+            <p>La columna de la izquierda tiene el ancho del <code>li</code> más largo.</p>
+        </main>
+    </div>
 </body>
 
 </html>

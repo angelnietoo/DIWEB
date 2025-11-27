@@ -1,11 +1,11 @@
-<!-- actividad6.html -->
+<!-- actividad6-flex.html -->
 <!doctype html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 6 - Card set</title>
+    <title>Actividad 6 - Card set (flex)</title>
     <style>
         body {
             margin: 0;
@@ -17,7 +17,9 @@
         .cardset {
             display: flex;
             justify-content: space-between;
+            /* espacio entre y a los lados */
             gap: 16px;
+            /* separación entre tarjetas */
         }
 
         .card {
@@ -54,21 +56,21 @@
 
 <body>
     <section class="cardset">
-        <div class="card">
+        <article class="card">
             <div class="title">Título 1</div>
-            <div class="body">Cuerpo que determina la altura.</div>
+            <div class="body">Cuerpo (variable según contenido).</div>
             <div class="footer">Pie</div>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
             <div class="title">Título 2</div>
-            <div class="body">Otro contenido que puede ser más largo y aumentar altura.</div>
+            <div class="body">Más contenido para dar altura.</div>
             <div class="footer">Pie</div>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
             <div class="title">Título 3</div>
-            <div class="body">Contenido.</div>
+            <div class="body">Cuerpo.</div>
             <div class="footer">Pie</div>
-        </div>
+        </article>
     </section>
 </body>
 

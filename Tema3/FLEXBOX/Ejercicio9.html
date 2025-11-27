@@ -1,11 +1,11 @@
-<!-- actividad9.html -->
+<!-- actividad9-flex.html -->
 <!doctype html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 9 - Header + Section</title>
+    <title>Actividad 9 - Header + Section (flex)</title>
     <style>
         body {
             margin: 0;
@@ -21,15 +21,6 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
         }
 
-        .logo {
-            font-weight: 700;
-        }
-
-        nav {
-            display: flex;
-            gap: 12px;
-        }
-
         main {
             padding: 20px;
         }
@@ -38,6 +29,7 @@
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
+            justify-content: flex-start;
         }
 
         .card {
@@ -58,12 +50,10 @@
             <a href="#">Inicio</a>
             <a href="#">Productos</a>
         </nav>
-        <div>
-            <a href="#">Entrar</a>
-        </div>
+        <div><a href="#">Entrar</a></div>
     </header>
     <main>
-        <section class="cards">
+        <section class="cards" aria-label="Tarjetas">
             <article class="card">
                 <h3>Card 1</h3>
                 <p>Detalle</p>
@@ -74,6 +64,10 @@
             </article>
             <article class="card">
                 <h3>Card 3</h3>
+                <p>Detalle</p>
+            </article>
+            <article class="card">
+                <h3>Card 4</h3>
                 <p>Detalle</p>
             </article>
         </section>

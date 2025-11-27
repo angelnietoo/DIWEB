@@ -1,11 +1,11 @@
-<!-- actividad10.html -->
+<!-- actividad10-flex.html -->
 <!doctype html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 10 - Mi página completa</title>
+    <title>Actividad 10 - Mi página completa (flex)</title>
     <style>
         :root {
             --accent: #0e7c74;
@@ -23,6 +23,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 16px;
             padding: 12px 20px;
             background: var(--accent);
             color: #fff;
@@ -30,6 +31,7 @@
 
         .layout {
             display: flex;
+            gap: 12px;
             flex: 1;
             min-height: 0;
         }
@@ -39,6 +41,9 @@
             background: #e9f7f6;
             padding: 16px;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .main {
@@ -69,15 +74,13 @@
     </header>
     <div class="layout">
         <aside class="sidebar">
-            <ul>
-                <li>Inicio</li>
-                <li>Servicios</li>
-                <li>Contactos</li>
-            </ul>
+            <a href="#">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contacto</a>
         </aside>
         <main class="main">
             <h1>Bienvenido</h1>
-            <p>Contenido principal</p>
+            <p>Área principal con un layout completo hecho con flexbox y gaps.</p>
         </main>
     </div>
 </body>

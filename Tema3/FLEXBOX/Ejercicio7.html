@@ -1,11 +1,11 @@
-<!-- actividad7.html -->
+<!-- actividad7-flex.html -->
 <!doctype html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 7 - Dos columnas</title>
+    <title>Actividad 7 - Dos columnas (flex)</title>
     <style>
         body {
             margin: 0;
@@ -23,25 +23,26 @@
         .left {
             flex: 2;
             padding: 24px;
-            background: white;
+            background: #fff;
             box-sizing: border-box;
         }
 
         .right {
             flex: 1;
             padding: 24px;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             gap: 12px;
-            box-sizing: border-box;
+            /* dos filas iguales con gap */
         }
 
         .row {
             flex: 1;
             border: 1px solid lightgray;
             padding: 12px;
-            box-sizing: border-box;
             background: #fff;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -50,11 +51,11 @@
     <div class="container">
         <div class="left">
             <h2>Columna izquierda (2 partes)</h2>
-            <p>Contenido amplio.</p>
+            <p>Contenido extenso.</p>
         </div>
         <div class="right">
-            <div class="row">Fila 1 (mitad de altura derecha)</div>
-            <div class="row">Fila 2 (mitad de altura derecha)</div>
+            <div class="row">Fila 1</div>
+            <div class="row">Fila 2</div>
         </div>
     </div>
 </body>

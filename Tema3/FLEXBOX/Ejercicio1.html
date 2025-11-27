@@ -1,55 +1,75 @@
-<!-- actividad1-con-gap.html -->
+<!-- actividad1-flex-gap.html -->
 <!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Actividad 1 - Menú horizontal (con separación)</title>
-  <style>
-    body { margin:0; font-family: sans-serif; }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Actividad 1 - Menú horizontal (flex + gap)</title>
+    <style>
+        :root {
+            --bg: rgba(123, 198, 199, 0.8);
+            --link-bg: rgba(255, 255, 255, 0.12);
+            --gap: 12px;
+        }
 
-    .topnav {
-      display:flex;
-      background: rgba(123,198,199,0.8);
-      width:100%;
-    }
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
 
-    /* Añadimos gap para crear separación en píxeles entre los elementos */
-    .topnav ul {
-      list-style:none;
-      margin:0;
-      padding:8px;     /* opcional: espacio lateral para que el gap no quede contra el borde */
-      display:flex;
-      width:100%;
-      gap:8px;         /* <-- separación en píxeles entre enlaces (ajusta aquí) */
-      box-sizing:border-box;
-    }
+        /* Contenedor nav como flex */
+        nav.topnav {
+            display: flex;
+            background: var(--bg);
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+        }
 
-    /* Cada li sigue ocupando el espacio disponible */
-    .topnav li { flex:1; text-align:center; }
+        /* Hacemos que la lista sea un flex row y usamos gap para separación */
+        nav.topnav>ul {
+            display: flex;
+            gap: var(--gap);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
 
-    /* Si quieres que la separación sea visible (espacio entre "cajas"), dale fondo a los enlaces */
-    .topnav a{
-      display:block;
-      padding:14px 10px;
-      text-decoration:none;
-      color:#000;
-      background: rgba(255,255,255,0.12); /* opcional: hace visible la separación */
-      border-radius:6px;                   /* opcional: estética */
-    }
+        /* Cada li ocupa espacio flexible igual */
+        nav.topnav li {
+            flex: 1 1 0;
+            text-align: center;
+            box-sizing: border-box;
+        }
 
-    .topnav a:hover { background: rgba(0,0,0,0.08); }
-  </style>
+        /* Hacemos que el <a> sea el "bloque" visible (caja) */
+        nav.topnav a {
+            display: block;
+            padding: 14px 10px;
+            text-decoration: none;
+            color: #000;
+            background: var(--link-bg);
+            border-radius: 6px;
+        }
+
+        nav.topnav a:hover {
+            background: rgba(0, 0, 0, 0.08);
+        }
+    </style>
 </head>
+
 <body>
-  <nav class="topnav">
-    <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Productos</a></li>
-      <li><a href="#">Servicios</a></li>
-      <li><a href="#">Sobre</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-  </nav>
+    <nav class="topnav" aria-label="Navegación principal">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
 </body>
+
 </html>
