@@ -1,99 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Actividad 1 - Menú horizontal (flex)</title>
-    <style>
-        :root {
-            --bg: rgba(123, 198, 199, 0.8);
-            --link-bg: rgba(255, 255, 255, 0.12);
-            --gap: 12px
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Actividad 1 — Menú horizontal</title>
 
-        html,
-        body {
-            height: 100%;
-            margin: 0
-        }
+  <style>
+    /* Reset del box model */
+    * { box-sizing: border-box; }
 
-        body {
-            display: flex;
-            flex-direction: column;
-            font-family: sans-serif
-        }
+    /* Estilos base */
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fff;
+    }
 
-        nav {
-            display: flex;
-            background: var(--bg);
-            padding: 8px;
-            width: 100%;
-            box-sizing: border-box
-        }
+    /* Contenedor del menú: ocupa todo el ancho disponible */
+    .menu-horizontal { width: 100%; }
 
-        nav>ul {
-            display: flex;
-            gap: var(--gap);
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            align-items: stretch
-        }
+    /* Lista principal: convertir en fila con Flexbox */
+    .menu-horizontal ul {
+      list-style: none;
+      padding: 4px;
+      margin: 0;
+      display: flex;
+      gap: 5px;
+      align-items: stretch;
+      width: 100%;
+    }
 
-        nav li {
-            display: flex;
-            flex: 1 1 0;
-            min-width: 0;
-            align-items: stretch;
-            justify-content: center
-        }
+    /* Elementos de la lista */
+    .menu-horizontal li { flex: 1 1 0; }
 
-        nav a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 14px 10px;
-            text-decoration: none;
-            color: #000;
-            background: var(--link-bg);
-            border-radius: 6px;
-            box-sizing: border-box
-        }
+    /* Enlaces del menú */
+    .menu-horizontal a {
+      display: block;
+      width: 100%;
+      padding: 1rem 0;
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      background: rgba(123, 198, 199, 0.8);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
 
-        nav a:hover {
-            background: rgba(0, 0, 0, 0.08)
-        }
-
-        nav a:focus {
-            outline: 2px dashed rgba(0, 0, 0, 0.18);
-            outline-offset: 3px
-        }
-
-        @supports not (gap:1rem) {
-            nav>ul {
-                gap: 0
-            }
-
-            nav li+li {
-                margin-left: var(--gap)
-            }
-        }
-    </style>
+    /* Responsive: en pantallas pequeñas apilar el menú en columna */
+    @media (max-width: 420px) {
+      .menu-horizontal ul { flex-direction: column; gap: 6px; }
+      .menu-horizontal li { flex: none; }
+    }
+  </style>
 </head>
-
 <body>
-    <nav aria-label="Navegación principal">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Opciones</a></li>
-            <li><a href="#">Planes</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
-</body>
 
+  <!-- Navegación principal -->
+  <nav class="menu-horizontal" aria-label="Menú principal">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Opciones</a></li>
+      <li><a href="#">Planes</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+
+</body>
 </html>

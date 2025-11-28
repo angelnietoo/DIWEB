@@ -1,77 +1,127 @@
-<!-- actividad6-flex.html -->
 <!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 6 - Card set (flex)</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: sans-serif;
-            padding: 20px;
-            background: #f0f0f0;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Actividad 6 - Grupo de tarjetas</title>
+  <style>
+    :root{
+      --header-bg: #000000;
+      --body-bg: #ffffff;
+      --footer-bg: #bfbfbf;
+      --text-body: #222;
+      --card-width: 220px;
+    }
 
-        .cardset {
-            display: flex;
-            justify-content: space-between;
-            /* espacio entre y a los lados */
-            gap: 16px;
-            /* separación entre tarjetas */
-        }
+    * { box-sizing: border-box; }
+    html,body { height: 100%; margin: 0; font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #f3f3f3; }
 
-        .card {
-            display: flex;
-            flex-direction: column;
-            width: 240px;
-            background: white;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
-        }
+    /* contenedor de las tarjetas */
+    .card-set {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: stretch;
+      padding: 28px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-        .card .title {
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #0e7c74;
-            color: white;
-        }
+    /* tarjeta individual */
+    .card {
+      width: var(--card-width);
+      display: flex;
+      flex-direction: column;
+      background: var(--body-bg);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
 
-        .card .body {
-            padding: 12px;
-            flex: 1;
-        }
+    /* cabecera: 40px, centrado */
+    .card__header {
+      height: 40px;
+      background: var(--header-bg);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card__header h2 {
+      font-size: 16px;
+      font-weight: normal;
+    }
 
-        .card .footer {
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #e9f7f6;
-        }
-    </style>
+    /* cuerpo: ocupa el resto, no centrado */
+    .card__body {
+      padding: 14px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      color: var(--text-body);
+      background: var(--body-bg);
+    }
+    .card__body p {
+      margin: 0 0 12px 0;
+      line-height: 1.5;
+    }
+
+    /* pie: 30px, centrado */
+    .card__footer {
+      height: 30px;
+      background: var(--footer-bg);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 8px;
+    }
+    .card__footer h4 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    /* comportamiento responsivo */
+    @media (max-width: 760px){
+      .card-set { flex-wrap: wrap; justify-content: center; }
+      .card { width: 280px; }
+    }
+  </style>
 </head>
-
 <body>
-    <section class="cardset">
-        <article class="card">
-            <div class="title">Título 1</div>
-            <div class="body">Cuerpo (variable según contenido).</div>
-            <div class="footer">Pie</div>
-        </article>
-        <article class="card">
-            <div class="title">Título 2</div>
-            <div class="body">Más contenido para dar altura.</div>
-            <div class="footer">Pie</div>
-        </article>
-        <article class="card">
-            <div class="title">Título 3</div>
-            <div class="body">Cuerpo.</div>
-            <div class="footer">Pie</div>
-        </article>
-    </section>
-</body>
 
+  <main class="card-set" aria-label="Conjunto de tarjetas">
+    <!-- Tarjeta izquierda -->
+    <article class="card" aria-labelledby="t1" aria-describedby="f1">
+      <header class="card__header"><h2 id="t1">Tarjeta Izquierda</h2></header>
+      <div class="card__body">
+        <p>Contenido del cuerpo</p>
+        <p>Contenido del cuerpo</p>
+        <p>Contenido del cuerpo</p>
+      </div>
+      <footer class="card__footer"><h4 id="f1">Pie</h4></footer>
+    </article>
+
+    <!-- Tarjeta centro -->
+    <article class="card" aria-labelledby="t2" aria-describedby="f2">
+      <header class="card__header"><h2 id="t2">Tarjeta centro</h2></header>
+      <div class="card__body">
+        <p>Contenido del cuerpo</p>
+      </div>
+      <footer class="card__footer"><h4 id="f2">Pie</h4></footer>
+    </article>
+
+    <!-- Tarjeta derecha -->
+    <article class="card" aria-labelledby="t3" aria-describedby="f3">
+      <header class="card__header"><h2 id="t3">Tarjeta derecha</h2></header>
+      <div class="card__body">
+        <p>Contenido del cuerpo</p>
+      </div>
+      <footer class="card__footer"><h4 id="f3">Pie</h4></footer>
+    </article>
+  </main>
+
+</body>
 </html>

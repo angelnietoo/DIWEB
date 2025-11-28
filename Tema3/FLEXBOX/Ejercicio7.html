@@ -1,63 +1,92 @@
-<!-- actividad7-flex.html -->
 <!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 7 - Dos columnas (flex)</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: sans-serif;
-            padding: 20px;
-            background: #0e7c74;
-            box-sizing: border-box;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Actividad 7 - Grupo de tarjetas</title>
+  <style>
+    /* Base */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      padding: 20px;
+      background: #ffffff;
+      font-family: Arial, sans-serif;
+    }
 
-        .container {
-            display: flex;
-            gap: 12px;
-        }
+    /* Contenedor principal: dos columnas */
+    .layout {
+      display: flex;
+      gap: 0;
+      min-height: calc(100vh - 40px);
+    }
 
-        .left {
-            flex: 2;
-            padding: 24px;
-            background: #fff;
-            box-sizing: border-box;
-        }
+    /* Columna izquierda (2 partes) */
+    .left {
+      flex: 2;
+      background: #0e7c74;
+      color: white;
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
 
-        .right {
-            flex: 1;
-            padding: 24px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            /* dos filas iguales con gap */
-        }
+    /* Columna derecha (1 parte) y contiene dos filas) */
+    .right {
+      flex: 1;
+      background: #ffffff;
+      padding: 0;
 
-        .row {
-            flex: 1;
-            border: 1px solid lightgray;
-            padding: 12px;
-            background: #fff;
-            box-sizing: border-box;
-        }
-    </style>
+      display: flex;
+      flex-direction: column;
+
+      /* Borde completo alrededor de la columna derecha */
+      border: 1px solid lightgray;
+    }
+
+    /* Filas dentro de la columna derecha: iguales en altura */
+    .row {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 24px;
+      border-bottom: 1px solid lightgray;
+    }
+
+    /* Quitar el borde inferior de la última fila para no dejar doble línea al final */
+    .row:last-child {
+      border-bottom: none;
+    }
+
+    /* Ejemplos de tipografía/espaciado interior */
+    .left h2 { margin: 0 0 8px 0; font-size: 18px; font-weight: normal; }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="left">
-            <h2>Columna izquierda (2 partes)</h2>
-            <p>Contenido extenso.</p>
-        </div>
-        <div class="right">
-            <div class="row">Fila 1</div>
-            <div class="row">Fila 2</div>
-        </div>
-    </div>
-</body>
 
+  <div class="layout" role="main" aria-label="Diseño de dos columnas">
+    <aside class="left">
+      <div>
+        <h2>Columna izquierda</h2>
+      </div>
+    </aside>
+
+    <section class="right" aria-label="Columna derecha dividida">
+      <div class="row">
+        <div class="content">
+          <p>Derecha parte alta</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="content">
+          <p>Derecha parte baja</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
 </html>

@@ -1,64 +1,61 @@
-<!-- actividad3-flex.html -->
 <!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 3 - Sidebar 1:4 (flex)</title>
-    <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            font-family: sans-serif;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Actividad 3 - Un sidebar a la izquierda del contenido</title>
+  <style>
 
-        .wrap {
-            display: flex;
-            /* contenedor flex principal */
-            gap: 2px;
-            /* gap de 2px entre sidebar y contenido */
-            height: 100vh;
-            /* alto viewport */
-        }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; font-family: sans-serif; background: #ffffff; }
 
-        .sidebar {
-            flex: 1 1 0;
-            /* proporción 1 */
-            padding: 12px 24px;
-            /* padding vertical 12px lateral 24px */
-            background: #f0f8f7;
-            box-sizing: border-box;
-        }
+    .wrap {
+      display: flex;
+      gap: 2px;
+      height: 100vh;
+      align-items: stretch;
+    }
 
-        .content {
-            flex: 4 1 0;
-            /* proporción 4 (relación 1:4) */
-            padding: 12px 24px;
-            background: #ffffff;
-            box-sizing: border-box;
-        }
+    .sidebar {
+      flex: 1 1 0;
+      padding: 12px 24px;
+      background: #8fd7f8;
+      color: #000;
+    }
 
-        /* pequeños estilos para diferenciar */
-        .sidebar h2,
-        .content h1 {
-            margin: 0 0 12px;
-        }
-    </style>
+    .content {
+      flex: 4 1 0;
+      padding: 12px 24px;
+      background: #d7e9e4;
+      color: #000;
+    }
+
+    .sidebar p, .content p {
+      margin: 0;
+      line-height: 1.2;
+      font-size: 16px;
+    }
+
+    .sidebar .titulo {
+      margin: 0 0 12px 0;
+      font-weight: normal;
+    }
+
+    .content .titulo {
+      margin: 0 0 12px 0;
+      font-weight: normal;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="wrap">
-        <aside class="sidebar">
-            <h2>Sidebar</h2>
-            <p>Enlaces y notas.</p>
-        </aside>
-        <section class="content">
-            <h1>Contenido principal</h1>
-            <p>Texto de ejemplo a la derecha.</p>
-        </section>
-    </div>
-</body>
+  <div class="wrap" role="region" aria-label="Diseño con sidebar y contenido">
+    <aside class="sidebar" aria-label="Contenido lateral">
+      <p class="titulo">contenido lateral</p>
+    </aside>
 
+    <main class="content" aria-label="Contenido principal">
+      <p class="titulo">Esto sería el contenido principal</p>
+    </main>
+  </div>
+</body>
 </html>

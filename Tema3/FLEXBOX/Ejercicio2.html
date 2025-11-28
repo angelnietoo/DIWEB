@@ -1,84 +1,79 @@
-<!-- actividad2-flex.html -->
 <!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 2 - Menú vertical (flex + gap)</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: sans-serif;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Actividad 2 - Menú vertical</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fff;
+    }
 
-        /* contenedor principal: usamos flex para layout */
-        .layout {
-            display: flex;
-            min-height: 100vh;
-            align-items: flex-start;
-        }
+    .layout {
+      display: flex;
+      min-height: 100vh;
+      align-items: flex-start;
+    }
 
-        /* sidebar es flex column y usa gap para separación entre enlaces */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            /* menú vertical */
-            gap: 8px;
-            /* separación entre enlaces (ajusta si quieres) */
-            background: rgba(123, 198, 199, 0.8);
-            padding: 12px;
-            /* espacio alrededor */
-            box-sizing: border-box;
-            width: max-content;
-            /* ancho = del item más ancho */
-            align-items: stretch;
-        }
+    .sidebar {
+      display: flex;
+      align-items: flex-start;
+      padding: 4px;
+      background: #ffffff; 
+      width: max-content;
+    }
 
-        .sidebar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+    .sidebar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      width: 100%;
+    }
 
-        .sidebar li {}
+    .sidebar li {
+      width: 100%;
+    }
 
-        .sidebar a {
-            display: block;
-            padding: 10px 14px;
-            text-decoration: none;
-            color: #000;
-            background: rgba(255, 255, 255, 0.12);
-            border-radius: 6px;
-        }
+    .sidebar a {
+      display: block;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: #000;
+      background: rgba(123, 198, 199, 0.8);
+      text-align: left;
+      font-size: 20px;
+      line-height: 1.1;
+      box-shadow: none;
+    }
 
-        main {
-            flex: 1;
-            padding: 20px;
-        }
-    </style>
+    .sidebar a { min-width: 0; }
+
+    @media (max-width: 320px) {
+      .sidebar { padding: 10px; }
+      .sidebar a { padding: 12px 14px; font-size: 18px; }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="layout">
-        <nav class="sidebar" aria-label="Menú vertical">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Categoría larga</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-        <main>
-            <h1>Área de contenido</h1>
-            <p>La columna de la izquierda tiene el ancho del <code>li</code> más largo.</p>
-        </main>
-    </div>
-</body>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Menú vertical">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Opciones</a></li>
+        <li><a href="#">Planes</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
 
+    <main>
+    </main>
+  </div>
+</body>
 </html>

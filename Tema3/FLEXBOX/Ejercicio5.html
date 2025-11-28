@@ -1,74 +1,92 @@
-<!-- actividad5-flex.html -->
 <!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 5 - Card (flex)</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: sans-serif;
-            background: #f5f5f5;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Actividad 5 - Card con flexbox</title>
+  <style>
+    * { box-sizing: border-box; }
+    html,body { height: 100%; margin: 0; font-family: sans-serif; }
 
-        .card {
-            display: flex;
-            flex-direction: column;
-            width: 320px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-        }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .card .header,
-        .card .footer {
-            display: flex;
-            /* use flex to center both axes */
-            align-items: center;
-            justify-content: center;
-            padding: 12px;
-        }
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 360px;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
 
-        .card .header {
-            height: 56px;
-            background: #0e7c74;
-            color: #fff;
-        }
+    .card__header,
+    .card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 16px;
+      text-align: center;
+    }
 
-        .card .body {
-            padding: 16px;
-            min-height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .card__header {
+      background: #000; 
+      color: #fff;
+      height: 56px;
+    }
 
-        .card h2,
-        .card h4 {
-            margin: 0;
-        }
-    </style>
+    .card__header h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .card__body {
+      padding: 5px;
+      min-height: 140px;
+      color: #333;
+      display: block;
+    }
+
+    .card__body img {
+      max-width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 4px;
+      display: block;
+    }
+
+    .card__footer {
+      background: #bfbfbf;
+      color: #fff;
+      height: 56px;
+    }
+
+    .card__footer h4 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+  </style>
 </head>
-
 <body>
-    <article class="card">
-        <div class="header">
-            <h2>Título</h2>
-        </div>
-        <div class="body">
-            <p>Contenido centrado (texto o imagen).</p>
-        </div>
-        <div class="footer">
-            <h4>Pie de tarjeta</h4>
-        </div>
-    </article>
-</body>
 
+  <article class="card">
+    <header class="card__header">
+      <h2>Tarjeta de presentación</h2>
+    </header>
+
+    <section class="card__body">
+      <p>Contenido del cuerpo de la tarjeta</p>
+    </section>
+
+    <footer class="card__footer">
+      <h4>Pie de la tarjeta</h4>
+    </footer>
+  </article>
+
+</body>
 </html>

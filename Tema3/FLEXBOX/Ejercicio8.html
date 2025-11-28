@@ -1,70 +1,99 @@
-<!-- actividad8-flex.html -->
 <!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 8 - Header (flex)</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: sans-serif;
-        }
+  <meta charset="utf-8">
+  <title>Actividad 8 - Creación del header</title>
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 12px 20px;
-            background: #fff;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-        }
+  <!-- Google Font: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
-        .logo {
-            font-weight: 700;
-        }
+  <style>
+    :root{
+      --h:64px;
+      --bg:#263640;
+      --muted:#9fb0bd;
+      --accent:#3fa9ff;
+      --white:#fff;
+      --gap:1rem;
+    }
 
-        nav {
-            display: flex;
-            gap: 12px;
-        }
+    *{box-sizing:border-box;margin:0;padding:0}
 
-        .auth {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
+    /* Aplicar la nueva tipografía a todo */
+    body { font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
 
-        .btn {
-            padding: 8px 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            border: 1px solid #ddd;
-        }
+    /* Header (layout con flex únicamente) */
+    header.site{
+      display:flex;
+      align-items:center;
+      height:var(--h);
+      background:var(--bg);
+      color:var(--white);
+    }
 
-        .btn.primary {
-            background: #0e7c74;
-            color: #fff;
-            border-color: #0e7c74;
-        }
-    </style>
+    .inner{
+      display:flex;
+      align-items:center;
+      gap:var(--gap);
+      width:min(1200px,96%);
+      margin:0 auto;
+      padding:0 .5rem;
+    }
+
+    /* Logo */
+    .logo{flex:0 0 auto}
+    .brand{
+      font-weight:800;
+      font-size:1.05rem;
+      padding:.25rem .5rem;
+      color:var(--white);
+    }
+    .brand:visited{ color:var(--white); }
+    .brand::first-letter{color:var(--accent)}
+
+    /* Navegación (centro flexible) */
+    .nav{flex:1;display:flex;justify-content:center}
+    .nav ul{display:flex;gap:1.25rem;list-style:none}
+    .nav a{color:var(--muted);text-decoration:none;padding:.35rem .45rem;border-radius:6px}
+    .nav a:hover,.nav a:focus{color:var(--white);background:rgba(255,255,255,.04)}
+
+    /* Botones (derecha) */
+    .auth{flex:0 0 auto;display:flex;gap:.6rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;
+         padding:.45rem .75rem;border-radius:8px;font-weight:600;text-decoration:none}
+    .btn--primary{background:#2b92e6;color:var(--white)}
+    .btn--ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,.06)}
+
+    /* Responsive (sigue siendo solo flexbox) */
+    @media (max-width:720px){
+      .inner{flex-direction:column;align-items:stretch;padding:.6rem 0}
+      .nav{justify-content:flex-start}
+      .auth{justify-content:flex-start}
+      .btn{min-width:0;padding:.35rem .5rem;font-size:.95rem}
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <div class="logo">MiLogo</div>
-        <nav aria-label="Navegación principal">
-            <a href="#">Inicio</a>
-            <a href="#">Servicios</a>
-            <a href="#">Contacto</a>
-        </nav>
-        <div class="auth">
-            <a class="btn" href="#">Registro</a>
-            <a class="btn primary" href="#">Entrar</a>
-        </div>
-    </header>
-</body>
+  <header class="site" role="banner">
+    <div class="inner" role="presentation">
+      <div class="logo" role="img" aria-label="MiWeb">
+        <a class="brand" href="#">MiWeb</a>
+      </div>
 
+      <nav class="nav" role="navigation" aria-label="Menú principal">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Artículos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="auth" aria-label="Acceso">
+        <a class="btn btn--primary" href="#">Entrar</a>
+        <a class="btn btn--primary" href="#">Registro</a>
+      </div>
+    </div>
+  </header>
+</body>
 </html>

@@ -1,77 +1,170 @@
-<!-- actividad9-flex.html -->
 <!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Actividad 9 - Header + Section (flex)</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: sans-serif;
-        }
+  <meta charset="utf-8">
+  <title>Actividad 9 - Header y section</title>
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 20px;
-            background: #fff;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-        }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
-        main {
-            padding: 20px;
-        }
+  <style>
+    /* Variables */
+    :root{
+      --h:64px;
+      --bg:#263640;
+      --muted:#9fb0bd;
+      --accent:#3fa9ff;
+      --white:#fff;
+      --gap:1rem;
+      --card-bg:#fff;
+      --page-bg:#f1f2f3;
+      --card-radius:10px;
+      --card-shadow: 0 6px 18px rgba(16,24,40,0.08);
+      --content-width: min(1200px, 96%);
+    }
 
-        .cards {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-        }
+    /* Reset / base */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:"Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--page-bg);
+      color:#111827;
+    }
+    a{text-decoration:none;color:inherit}
 
-        .card {
-            flex: 1 1 220px;
-            min-width: 220px;
-            background: white;
-            padding: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
-            border-radius: 6px;
-        }
-    </style>
+    /* Header (flex) */
+    header.site{
+      display:flex;
+      align-items:center;
+      height:var(--h);
+      background:var(--bg);
+      color:var(--white);
+    }
+    .inner{
+      display:flex;
+      align-items:center;
+      gap:var(--gap);
+      width:var(--content-width);
+      margin:0 auto;
+      padding:0 .5rem;
+    }
+    .logo{flex:0 0 auto}
+    .brand{font-weight:800;font-size:1.05rem;padding:.25rem .5rem;color:var(--white)}
+    .brand::first-letter{color:var(--accent)}
+    .nav{flex:1;display:flex;justify-content:center}
+    .nav ul{display:flex;gap:1.25rem;list-style:none}
+    .nav a{color:var(--muted);padding:.35rem .45rem;border-radius:6px}
+    .nav a:hover,.nav a:focus{color:var(--white);background:rgba(255,255,255,.04)}
+    .auth{flex:0 0 auto;display:flex;gap:.6rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:.45rem .75rem;border-radius:8px;font-weight:600}
+    .btn--primary{background:#2b92e6;color:var(--white)}
+    .btn--ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,.06)}
+
+    /* Section - contenedor */
+    .container{
+      width:var(--content-width);
+      margin: 1.5rem auto;
+      padding: 0 .75rem;
+    }
+
+    /* Título */
+    .section-title{
+      font-size:1.6rem;
+      font-weight:800;
+      margin: 1.25rem 0;
+      color:#0f172a;
+    }
+
+    /* Tarjetas: layout con flexbox - dos columnas */
+    .cards{
+      display:flex;
+      flex-wrap:wrap;
+      gap:1rem;
+      margin-top:.5rem;
+    }
+
+    /* Cada tarjeta ocupa ~50% menos gaps */
+    .card{
+      flex: 1 1 calc(50% - 0.5rem);
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      padding: 1.25rem;
+      min-width: 220px;
+      display:flex;
+      align-items:center;
+    }
+
+    /* Ejemplo de contenido dentro de la tarjeta */
+    .card p{
+      margin:0;
+      color:#111827;
+      line-height:1.5;
+    }
+
+
+    /* Responsive: 1 columna en pantallas estrechas */
+    @media (max-width:720px){
+      .inner{flex-direction:column;align-items:stretch;padding:.6rem 0}
+      .nav{justify-content:flex-start}
+      .auth{justify-content:flex-start}
+      .btn{min-width:0;padding:.35rem .5rem;font-size:.95rem}
+
+      .card{ flex-basis: 100%; }
+      .container{ margin-top:0.85rem }
+    }
+
+    /* Separación grande entre header y contenido */
+    .spacer{ height: .85rem; background: transparent; }
+  </style>
 </head>
 
 <body>
-    <header>
-        <div class="logo">MiLogo</div>
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Productos</a>
-        </nav>
-        <div><a href="#">Entrar</a></div>
-    </header>
-    <main>
-        <section class="cards" aria-label="Tarjetas">
-            <article class="card">
-                <h3>Card 1</h3>
-                <p>Detalle</p>
-            </article>
-            <article class="card">
-                <h3>Card 2</h3>
-                <p>Detalle</p>
-            </article>
-            <article class="card">
-                <h3>Card 3</h3>
-                <p>Detalle</p>
-            </article>
-            <article class="card">
-                <h3>Card 4</h3>
-                <p>Detalle</p>
-            </article>
-        </section>
-    </main>
-</body>
+  <header class="site" role="banner">
+    <div class="inner" role="presentation">
+      <div class="logo" role="img" aria-label="MiWeb">
+        <a class="brand" href="#">MiWeb</a>
+      </div>
 
+      <nav class="nav" role="navigation" aria-label="Menú principal">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Artículos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="auth" aria-label="Acceso">
+        <a class="btn btn--primary" href="#">Entrar</a>
+        <a class="btn btn--primary" href="#">Registro</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="spacer" aria-hidden="true"></div>
+
+  <!-- Section con tarjetas -->
+  <section class="container" aria-labelledby="ultimos-articulos">
+    <h2 id="ultimos-articulos" class="section-title">Últimos artículos</h2>
+
+    <div class="cards">
+      <article class="card" role="article" aria-label="Artículo 1">
+        <p>Contenido de la tarjeta 1</p>
+      </article>
+
+      <article class="card" role="article" aria-label="Artículo 2">
+        <p>Contenido de la tarjeta 2</p>
+      </article>
+
+      <article class="card" role="article" aria-label="Artículo 3">
+        <p>Contenido de la tarjeta 3</p>
+      </article>
+
+      <article class="card" role="article" aria-label="Artículo 4">
+        <p>Contenido de la tarjeta 4</p>
+      </article>
+    </div>
+  </section>
+</body>
 </html>
