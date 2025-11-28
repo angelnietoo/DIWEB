@@ -1,72 +1,96 @@
-<!-- actividad1-flex-gap.html -->
 <!doctype html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Actividad 1 - Menú horizontal (flex + gap)</title>
+    <title>Actividad 1 - Menú horizontal (flex)</title>
     <style>
         :root {
             --bg: rgba(123, 198, 199, 0.8);
             --link-bg: rgba(255, 255, 255, 0.12);
-            --gap: 12px;
+            --gap: 12px
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0
         }
 
         body {
-            margin: 0;
-            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            font-family: sans-serif
         }
 
-        /* Contenedor nav como flex */
-        nav.topnav {
+        nav {
             display: flex;
             background: var(--bg);
-            width: 100%;
-            box-sizing: border-box;
             padding: 8px;
+            width: 100%;
+            box-sizing: border-box
         }
 
-        /* Hacemos que la lista sea un flex row y usamos gap para separación */
-        nav.topnav>ul {
+        nav>ul {
             display: flex;
             gap: var(--gap);
             list-style: none;
             margin: 0;
             padding: 0;
             width: 100%;
+            align-items: stretch
         }
 
-        /* Cada li ocupa espacio flexible igual */
-        nav.topnav li {
+        nav li {
+            display: flex;
             flex: 1 1 0;
-            text-align: center;
-            box-sizing: border-box;
+            min-width: 0;
+            align-items: stretch;
+            justify-content: center
         }
 
-        /* Hacemos que el <a> sea el "bloque" visible (caja) */
-        nav.topnav a {
-            display: block;
+        nav a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
             padding: 14px 10px;
             text-decoration: none;
             color: #000;
             background: var(--link-bg);
             border-radius: 6px;
+            box-sizing: border-box
         }
 
-        nav.topnav a:hover {
-            background: rgba(0, 0, 0, 0.08);
+        nav a:hover {
+            background: rgba(0, 0, 0, 0.08)
+        }
+
+        nav a:focus {
+            outline: 2px dashed rgba(0, 0, 0, 0.18);
+            outline-offset: 3px
+        }
+
+        @supports not (gap:1rem) {
+            nav>ul {
+                gap: 0
+            }
+
+            nav li+li {
+                margin-left: var(--gap)
+            }
         }
     </style>
 </head>
 
 <body>
-    <nav class="topnav" aria-label="Navegación principal">
+    <nav aria-label="Navegación principal">
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Productos</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">Servicios</a></li>
-            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Opciones</a></li>
+            <li><a href="#">Planes</a></li>
             <li><a href="#">Contacto</a></li>
         </ul>
     </nav>
