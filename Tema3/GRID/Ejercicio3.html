@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Card con Grid - cuerpo más alto</title>
+<style>
+  *{box-sizing:border-box}
+  body{
+    margin:24px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background:#f4f6f7;
+    color:#122;
+  }
+
+  /* tarjeta con Grid: header - body - footer
+     Cambiado: la fila central usa minmax(200px, 1fr) para mayor altura mínima */
+  .card{
+    width:320px;
+    display:grid;
+    grid-template-rows: 80px minmax(200px, 1fr) 48px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 6px 16px rgba(0,0,0,0.08);
+    border:1px solid rgba(0,0,0,0.04);
+  }
+
+  /* header y footer: centrado vertical y horizontal */
+  .card header,
+  .card footer{
+    display:grid;
+    place-items:center;
+    color:#010000;
+  }
+
+  .card header{ background:#91CDF2; }
+  .card footer{ background:#91CDF2; }
+
+  h2,h4{ margin:0; font-weight:700; }
+
+  /* cuerpo: más espacio gracias al grid anterior */
+  .card .body{ padding:14px; color:#222; line-height:1.4; }
+
+</style>
+</head>
+<body>
+
+  <article class="card" role="article" aria-label="Tarjeta de ejemplo">
+    <header><h2>Título</h2></header>
+
+    <div class="body">
+      <p>Contenido...</p>
+    </div>
+
+    <footer><h4>Pie</h4></footer>
+  </article>
+
+</body>
+</html>

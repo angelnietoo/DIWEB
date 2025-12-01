@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ejercicio 7 - Header (Grid)</title>
+<style>
+/* Ejercicio 7: header con 3 columnas usando Grid */
+body{font-family:system-ui,Arial;margin:20px;background:#fff}
+header{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:14px;border-radius:8px;border:1px solid #e6e8e9;max-width:1100px;margin:0 auto}
+.logo{font-weight:800}
+nav{display:grid;grid-auto-flow:column;gap:8px;justify-content:center}
+nav a{padding:8px 10px;text-decoration:none;border-radius:6px}
+.actions{display:grid;grid-auto-flow:column;gap:8px}
+</style>
+</head>
+<body>
+<h1>Ejercicio 7 — Header</h1>
+<header>
+<div class="logo">MiLogo</div>
+<nav aria-label="Navegación principal">
+<a href="#">Inicio</a>
+<a href="#">Proyectos</a>
+<a href="#">Blog</a>
+</nav>
+<div class="actions">
+<a href="#">Login</a>
+<a href="#">Registro</a>
+</div>
+</header>
+</body>
+</html>

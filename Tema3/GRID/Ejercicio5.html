@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ejercicio 5 - Dos columnas (derecha con 2 filas)</title>
+<style>
+/* Ejercicio 5: layout dos columnas, la derecha con 2 filas iguales */
+body{font-family:system-ui,Arial;margin:20px;background:#fbfcfd}
+.container{display:grid;grid-template-columns:2fr 1fr;gap:14px;max-width:1000px;margin:0 auto}
+.left{background:#fff;padding:14px;border-radius:6px;min-height:200px}
+.right{display:grid;grid-template-rows:1fr 1fr;gap:10px}
+.right > div{background:#fff;padding:12px;border-radius:6px}
+</style>
+</head>
+<body>
+<h1>Ejercicio 5 — Dos columnas</h1>
+<div class="container">
+<div class="left">Columna izquierda (2fr) — contenido amplio.</div>
+<div class="right">
+<div>Parte superior derecha</div>
+<div>Parte inferior derecha</div>
+</div>
+</div>
+</body>
+</html>

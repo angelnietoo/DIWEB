@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ejercicio 8 - Header + main (Grid)</title>
+<style>
+/* Ejercicio 8: página con header y main dividido en article + aside usando Grid */
+body{font-family:system-ui,Arial;margin:20px;background:#f5faf9}
+.page{display:grid;grid-template-rows:auto 1fr;gap:12px;max-width:1100px;margin:0 auto}
+.top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;padding:12px;background:#fff;border-radius:6px;border:1px solid #e5e8e8}
+.content{display:grid;grid-template-columns:3fr 1fr;gap:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.card{background:#fff;padding:12px;border-radius:6px;border:1px solid #e6eae9}
+aside{background:#f3f3f3;padding:12px;border-radius:6px}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="top"><div class="logo">Logo</div><nav>Menú</nav><div>Login</div></div>
+<main class="content">
+<section>
+<div class="cards">
+<div class="card">Tarjeta 1</div>
+<div class="card">Tarjeta 2</div>
+<div class="card">Tarjeta 3</div>
+</div>
+</section>
+<aside>Contenido complementario (aside)</aside>
+</main>
+</div>
+</body>
+</html>

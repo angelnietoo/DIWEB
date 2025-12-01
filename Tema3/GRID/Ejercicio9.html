@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ejercicio 9 - Página completa (Grid)</title>
+<style>
+/* Ejercicio 9: layout completo usando Grid */
+body{font-family:system-ui,Arial;margin:0;background:#eef3f2}
+.page{display:grid;grid-template-rows:auto 1fr auto;min-height:100vh}
+header{background:#0f7b78;color:#fff;padding:14px}
+.wrap{display:grid;grid-template-columns:240px 1fr;gap:12px;padding:12px}
+nav{background:#fff;padding:12px;border-radius:6px}
+main{background:#fff;padding:12px;border-radius:6px}
+footer{background:#173535;color:#fff;padding:12px}
+</style>
+</head>
+<body>
+<div class="page">
+<header><h2 style="margin:0">Mi sitio — Cabecera</h2></header>
+<div class="wrap">
+<nav>
+<ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+<li><a href="#">Inicio</a></li>
+<li><a href="#">Servicios</a></li>
+<li><a href="#">Contacto</a></li>
+</ul>
+</nav>
+<main>
+<h3>Contenido principal</h3>
+<p>Ejemplo de página completa maquetada con Grid: header, sidebar, main y footer.</p>
+</main>
+</div>
+<footer>© 2025 Mi sitio</footer>
+</div>
+</body>
+</html>

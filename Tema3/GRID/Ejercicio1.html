@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ejercicio 1 - Menú horizontal (Grid)</title>
+<style>
+/* Ejercicio 1: menú horizontal usando Grid */
+:root{--accent:#6fd0cf}
+body{font-family:system-ui,Arial;padding:20px;background:#f6f8f9}
+nav{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--accent);overflow:hidden}
+nav a{display:block;padding:16px;text-align:center;text-decoration:none;color:#042; font-weight:normal}
+nav a:hover{background:rgba(123,198,199,0.8)}
+.wrap{max-width:900px;margin:0 auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Menú principal">
+<a href="#">Inicio</a>
+<a href="#">Servicios</a>
+<a href="#">Acerca</a>
+<a href="#">Blog</a>
+<a href="#">Contacto</a>
+</nav>
+</div>
+</body>
+</html>

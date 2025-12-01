@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ejercicio 2 - Sidebar vertical (Grid) — Ocupa toda la web</title>
+<style>
+  /* Reset mínimo */
+  *{box-sizing:border-box}
+  html,body{height:100%;} /* necesario para 100vh consistente */
+  body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    margin:0;                 /* <- quitar margen para ocupar todo */
+    background:#ffffff;
+    color:#222;
+    min-height:100vh;
+  }
+
+  /* Contenedor principal con Grid: ocupa toda la ventana */
+  .layout{
+    display: grid;
+    grid-template-columns: 180px 1fr; /* izquierda fija, derecha flexible */
+    gap: 0;
+    width: 100%;             /* <- ocupa todo el ancho */
+    height: 100vh;           /* <- ocupa toda la altura de la ventana */
+    margin: 0;               /* <- quitar centrado */
+    align-items: start;
+    background: #fff;
+    overflow: auto;          /* evita desbordes no deseados */
+  }
+
+  /* Sidebar (izquierda) - ocupa toda la altura de .layout */
+  aside{
+    background: #e6e6e6;                /* gris claro como en la imagen */
+    padding: 28px 20px;                 /* espacio superior e izquierdo */
+    border-right: 1px solid #cfcfcf;    /* línea divisoria vertical entre aside y main */
+    display: grid;
+    align-content: start;               /* los elementos se pegan arriba */
+    height: 100%;                       /* asegura que llene la columna */
+  }
+
+  /* Lista tipo menú usando Grid (una columna vertical) */
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;                    /* separación vertical entre items (pequeña) */
+    width: 100%;
+  }
+
+  /* Cada item: texto a la izquierda y línea fina debajo */
+  li{
+    padding: 4px 0 6px 0;
+    font-weight: 600;
+    color: #222;
+    width: 140px;                /* controla la longitud de la línea */
+    position: relative;
+  }
+
+  /* Línea inferior */
+  li::after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #bdbdbd;
+    margin-top: 6px;
+  }
+
+  /* Zona de contenido (derecha) */
+  main{
+    background: #fff;
+    padding: 22px 28px;
+    min-height: 100%;          /* que coincida en altura con aside si es necesario */
+  }
+
+  main p{ margin: 0; color:#333; }
+
+  /* Ajustes responsive para pantallas pequeñas */
+  @media (max-width:640px){
+    .layout{ grid-template-columns: 1fr; height:auto; }
+    aside{ border-right: none; min-height: auto; padding: 18px; }
+    li{ width: 100%; }
+    li::after{ width: 80%; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="layout" role="region" aria-label="Layout con sidebar">
+    <aside>
+      <ul>
+        <li>Menú 1</li>
+        <li>Menú 2</li>
+        <li>Menú 3</li>
+        <li>Menú 4</li>
+        <li>Menú 5</li>
+      </ul>
+    </aside>
+
+    <main>
+      <p>Contenido</p>
+    </main>
+  </div>
+</body>
+</html>
