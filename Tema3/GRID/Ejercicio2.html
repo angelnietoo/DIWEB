@@ -7,45 +7,45 @@
 <style>
   /* Reset mínimo */
   *{box-sizing:border-box}
-  html,body{height:100%;} /* necesario para 100vh consistente */
+  html,body{height:100%;} 
   body{
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    margin:0;                 /* <- quitar margen para ocupar todo */
+    margin:0;
     background:#ffffff;
     color:#222;
     min-height:100vh;
   }
 
-  /* Contenedor principal con Grid: ocupa toda la ventana */
+  /* Contenedor principal con Grid */
   .layout{
     display: grid;
-    grid-template-columns: 180px 1fr; /* izquierda fija, derecha flexible */
+    grid-template-columns: 180px 1fr;
     gap: 0;
-    width: 100%;             /* <- ocupa todo el ancho */
-    height: 100vh;           /* <- ocupa toda la altura de la ventana */
-    margin: 0;               /* <- quitar centrado */
+    width: 100%;
+    height: 100vh;
+    margin: 0;
     align-items: start;
     background: #fff;
-    overflow: auto;          /* evita desbordes no deseados */
+    overflow: auto;
   }
 
-  /* Sidebar (izquierda) - ocupa toda la altura de .layout */
+  /* Sidebar (izquierda) */
   aside{
-    background: #e6e6e6;                /* gris claro como en la imagen */
-    padding: 28px 20px;                 /* espacio superior e izquierdo */
-    border-right: 1px solid #cfcfcf;    /* línea divisoria vertical entre aside y main */
+    background: #e6e6e6;
+    padding: 28px 20px;
+    border-right: 1px solid #cfcfcf;
     display: grid;
-    align-content: start;               /* los elementos se pegan arriba */
-    height: 100%;                       /* asegura que llene la columna */
+    align-content: start;
+    height: 100%;
   }
 
-  /* Lista tipo menú usando Grid (una columna vertical) */
+  /* Lista tipo menú usando Grid */
   ul{
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    gap: 6px;                    /* separación vertical entre items (pequeña) */
+    gap: 6px;
     width: 100%;
   }
 
@@ -54,7 +54,7 @@
     padding: 4px 0 6px 0;
     font-weight: 600;
     color: #222;
-    width: 140px;                /* controla la longitud de la línea */
+    width: 140px;
     position: relative;
   }
 
@@ -72,7 +72,7 @@
   main{
     background: #fff;
     padding: 22px 28px;
-    min-height: 100%;          /* que coincida en altura con aside si es necesario */
+    min-height: 100%;
   }
 
   main p{ margin: 0; color:#333; }

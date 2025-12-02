@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ejercicio 4 - Grupo de tarjetas (Grid) — Estilo tarjeta</title>
+<title>Ejercicio 4 - Grupo de tarjetas</title>
 <style>
   /* cuerpo */
   body{
@@ -13,7 +13,7 @@
     color:#122;
   }
 
-  /* contenedor de tarjetas: flujo en columnas (horizontales) */
+  /* contenedor de tarjetas */
   .card-set{
     display:grid;
     grid-auto-flow:column;
@@ -29,16 +29,16 @@
     grid-template-rows: 80px minmax(200px, 1fr) 48px;
     border:1px solid #e0e6e6;
     background:#fff;
-    box-shadow:0 6px 16px rgba(0,0,0,0.06); /* ligero sombreado */
+    box-shadow:0 6px 16px rgba(0,0,0,0.06);
   }
 
-  /* header y footer: centrado vertical y horizontal */
+  /* header y footer centrados */
   .card header,
   .card footer{
     display:grid;
-    place-items:center; /* centra h2/h4 */
-    color:#010000;      /* texto oscuro como en el ejemplo */
-    background:#91CDF2; /* color proporcionado en el enunciado */
+    place-items:center;
+    color:#010000;
+    background:#91CDF2;
   }
 
   /* cuerpo */
@@ -52,7 +52,7 @@
   /* reset de márgenes de títulos */
   h2, h4 { margin:0; font-weight:700; }
 
-  /* responsive: que quepan bien en móvil */
+  /* responsive */
   @media (max-width:640px){
     .card-set{ grid-auto-flow:row; grid-auto-rows:auto; grid-template-columns: 1fr; }
     .card{ grid-template-rows: 72px minmax(160px, 1fr) 46px; }
