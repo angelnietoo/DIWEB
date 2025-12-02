@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MiWeb completa</title>
+  <title>Ejercicio 9 - MiWeb completa</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -19,12 +19,10 @@
       --pad:16px;
       --container-max: min(1200px,96%);
       --surface-border: rgba(0,0,0,0.06);
-      --muted-dark:#666;
     }
 
     /* Reset y layout base */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
     body{
       font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
       color:#111;
@@ -32,7 +30,6 @@
       display:grid;
       grid-template-rows: auto 1fr auto;
       min-height:100vh;
-      line-height:1.25;
     }
 
     /* Utilidades reutilizables */
@@ -43,7 +40,6 @@
       border-radius:var(--cards-radius);
       box-shadow:var(--cards-shadow);
       border:1px solid var(--surface-border);
-      color:#333;
     }
     
     /* A partir de este apartado css lo he puesto todo un poco comprimido ya que ocupa muchas líneas de código */

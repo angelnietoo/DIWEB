@@ -3,11 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ejercicio 2 - Sidebar vertical (Grid) — Ocupa toda la web</title>
+<title>Ejercicio 2 - Sidebar vertical</title>
 <style>
-  /* Reset mínimo */
-  *{box-sizing:border-box}
-  html,body{height:100%;} 
+  /* Reset */
   body{
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     margin:0;
@@ -16,7 +14,7 @@
     min-height:100vh;
   }
 
-  /* Contenedor principal con Grid */
+  /* Contenedor principal */
   .layout{
     display: grid;
     grid-template-columns: 180px 1fr;
@@ -77,7 +75,7 @@
 
   main p{ margin: 0; color:#333; }
 
-  /* Ajustes responsive para pantallas pequeñas */
+  /* Responsive */
   @media (max-width:640px){
     .layout{ grid-template-columns: 1fr; height:auto; }
     aside{ border-right: none; min-height: auto; padding: 18px; }

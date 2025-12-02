@@ -3,15 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Actividad 5 — Columna y filas</title>
+<title>Actividad 5 - Columna y filas</title>
 <style>
   :root{
     --bg: #0e7c74;
     --card-bg: #ffffff;
     --border: lightgray;
   }
-
-  * { box-sizing: border-box; }
+  
   html, body { height: 100%; margin: 0; }
 
   body {
@@ -22,7 +21,7 @@
     color: #111;
   }
 
-  /* Grid principal: 2 columnas (2fr / 1fr) y 2 filas iguales (1fr / 1fr) */
+  /* Grid principal: 2 columnas */
   .card-grid {
     width: 100%;
     max-width: 900px;
@@ -30,16 +29,15 @@
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 16px;
-    height: 240px;
+    height: 220px;
   }
 
-  /* Columna izquierda: ocupa ambas filas (usamos grid en vez de flex) */
+  /* Columna izquierda: ocupando ambas filas */
   .left {
     grid-row: 1 / span 2;
     background: var(--card-bg);
     padding: 18px;
     display: grid;
-    gap: 8px;
   }
 
   /* Las dos tarjetas de la derecha */

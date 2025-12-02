@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Header + Sección con tarjetas</title>
+  <title>Ejercicio 8 - Header junto a Sección con tarjetas</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -12,7 +12,6 @@
       --muted:#9fb0bd;
       --accent:#3fa9ff;
       --white:#fff;
-      --gap:1rem;
       --page-bg:#f2f3f4;
       --card-bg:#fff;
       --cards-gap:18px;
@@ -26,7 +25,6 @@
     body{
       font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
       color:#111;background:var(--page-bg);
-      min-height:100vh;
       display:grid;
       grid-template-rows:auto 1fr;
     }
@@ -38,7 +36,6 @@
       display:grid;
       align-items:center;
       height:var(--h);
-      padding:0;
     }
 
     /* .inner: contenedor centrado horizontalmente dentro del header */
@@ -86,15 +83,14 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
     }
 
     aside h3{ font-size:0.95rem; margin-bottom:10px }
-    aside p{ font-size:0.9rem; color: #333 }
+    aside p{ font-size:0.9rem;}
 
     /* Main */
     main.content{ display:grid; gap:16px }
-    .content h2{ margin:0; font-size:1.05rem; color:#222 }
+    .content h2{ margin:0; font-size:1.05rem;}
 
     /* Tarjetas */
     .wrap { width:100%; max-width:920px; }
@@ -104,7 +100,6 @@
       padding:var(--cards-pad);
       border-radius:var(--cards-radius);
       box-shadow:var(--cards-shadow);
-      display:grid; color:#333;
     }
     .tarjeta-e { grid-column: 1 / span 2; grid-row: 1; }
     .tarjeta-b { grid-column: 3 / span 2; grid-row: 1; }
