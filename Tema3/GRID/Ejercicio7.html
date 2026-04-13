@@ -1,108 +1,84 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Ejercicio 7 - Header Optimizado</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    
-    :root {
-      --h: 64px;
-      --bg: #263640;
-      --muted: #9fb0bd;
-      --accent: #3fa9ff;
-      --white: #fff;
-      --gap: 1rem;
-    }
+<meta charset="utf-8">
+<title>Ejercicio 7</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    body {
-      font-family: "Montserrat", sans-serif;
-    }
+* { margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
 
-    header.site {
-      background: var(--bg);
-      color: var(--white);
-      display: grid;
-      justify-items: center; 
-    }
+body {
+  font-family: "Montserrat", sans-serif;
+}
 
-    .inner {
-      display: grid;
-      width: min(1200px, 96%);
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: var(--gap);
-      height: var(--h);
-    }
+header {
+  background: #263640;
+  color: #fff;
+}
 
-    .brand {
-      font-weight: 800;
-      color: var(--white);
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-    .brand::first-letter { color: var(--accent); }
+.inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 18px 20px;
+}
 
-    .nav ul {
-      display: grid;
-      grid-auto-flow: column;
-      gap: 1.25rem;
-      list-style: none;
-      justify-content: center;
-    }
+.nav ul {
+  display: grid;
+  grid-auto-flow: column;
+  list-style: none;
+  justify-content: center;
+  gap: 20px;
+}
 
-    .nav a {
-      color: var(--muted);
-      text-decoration: none;
-      padding: .35rem .45rem;
-      border-radius: 6px;
-      transition: 0.2s;
-    }
-    .nav a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+a {
+  color: #9fb0bd;
+  text-decoration: none;
+}
 
-    .btn {
-      padding: .45rem .85rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-    
-    .btn--primary { 
-      background: #2b92e6; 
-      color: var(--white); 
-    }
-    
-    .btn--ghost { 
-      color: var(--muted); 
-      border: 1px solid rgba(255,255,255,0.15); 
-    }
+.auth a {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-left: 8px;
+}
 
-  </style>
+.auth a:first-child {
+  background: #3fa9ff;
+  color: #fff;
+}
+
+.auth a:last-child {
+  border: 1px solid #9fb0bd;
+}
+
+</style>
 </head>
 
 <body>
-  <header class="site">
-    <div class="inner">
-      <div class="logo">
-        <a class="brand" href="#">MiWeb</a>
-      </div>
+<header>
+  <div class="inner">
+    
+    <div><strong>MiWeb</strong></div>
 
-      <nav class="nav" aria-label="Principal">
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Artículos</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </nav>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Artículos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
 
-      <div class="auth">
-        <a class="btn btn--primary" href="#">Entrar</a>
-        <a class="btn btn--ghost" href="#">Registro</a>
-      </div>
+    <div class="auth">
+      <a href="#">Entrar</a>
+      <a href="#">Registro</a>
     </div>
-  </header>
+
+  </div>
+</header>
 </body>
 </html>

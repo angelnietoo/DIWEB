@@ -1,150 +1,121 @@
-<!doctype html> 
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ejercicio 8 - Header y main con section y aside</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ejercicio 8</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
 
-    :root{
-      --h:64px;
-      --bg:#263640;
-      --muted:#9fb0bd;
-      --accent:#3fa9ff;
-      --white:#fff;
-      --page-bg:#f2f3f4;
-      --card-bg:#fff;
-      --cards-gap:18px;
-      --cards-radius:6px;
-      --cards-shadow:0 4px 10px rgba(0,0,0,0.06);
-      --cards-pad:16px;
-      --page-vertical-margins:36px;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box
+}
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-      color:#111;background:var(--page-bg);
-      display:grid;
-      grid-template-rows:auto 1fr;
-    }
+body{
+  font-family:Montserrat,sans-serif;
+  background:#f2f3f4;
+  display:grid;
+  grid-template-rows:auto 1fr;
+}
 
-    header.site{
-      background:var(--bg);
-      color:var(--white);
-      display:grid;
-      align-items:center;
-      height:var(--h);
-    }
+header{background:#263640;color:#fff}
 
-    .inner{
-      display:grid;
-      width:min(1200px,96%);
-      padding:0 .5rem;
-      grid-template-columns:auto 1fr auto;
-      align-items:center;
-      gap:var(--gap);
-      height:var(--h);
-      justify-self:center;
-    }
+.inner{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  padding:18px 20px;
+}
 
-    .brand{ font-weight:800; padding:.25rem .5rem; color:var(--white); text-decoration:none; border-radius:6px }
-    .brand::first-letter{ color:var(--accent) }
-    .nav ul{ display:grid; grid-auto-flow:column; gap:1.25rem; list-style:none; justify-content:center; align-items:center }
-    .nav a{ color:var(--muted); padding:.35rem .45rem; border-radius:6px; text-decoration:none }
-    .nav a:hover{ color:var(--white); background:rgba(255,255,255,.04) }
-    .auth{ display:grid; grid-auto-flow:column; gap:.6rem; align-items:center }
-    .btn{ padding:.45rem .75rem; border-radius:8px; font-weight:600; text-decoration:none; display:inline-block; min-width:72px; text-align:center }
-    .btn--primary{ background:#2b92e6; color:var(--white) }
-    .btn--ghost{ background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,.06) }
+.nav ul{
+  display:grid;
+  grid-auto-flow:column;
+  list-style:none;
+  justify-content:center;
+  gap:20px;
+}
 
-    .page {
-      display:grid;
-      width:min(1200px,96%);
-      margin: 18px auto;
-      padding: 0 .5rem;
-      gap: 20px;
-      grid-template-columns: 220px 1fr;
-      align-items:start;
-      min-height: calc(100vh - var(--h) - var(--page-vertical-margins));
-    }
+a{color:#9fb0bd;text-decoration:none}
 
-    aside.box{
-      background:var(--card-bg);
-      padding:16px;
-      border-radius:6px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.05);
-      border:1px solid rgba(0,0,0,0.06);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
+.auth a{
+  padding:6px 12px;
+  border-radius:6px;
+  font-weight:600;
+  margin-left:8px;
+}
 
-    aside h3{ font-size:0.95rem; margin-bottom:10px }
-    aside p{ font-size:0.9rem;}
+.auth a:first-child{background:#3fa9ff;color:#fff}
+.auth a:last-child{border:1px solid #9fb0bd}
 
-    main.content{ display:grid; gap:16px }
-    .content h2{ margin:0; font-size:1.05rem;}
+.page{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:20px;
+  padding:20px;
+}
 
-    .wrap { width:100%; max-width:920px; }
-    .cards { display:grid; grid-template-columns: repeat(4, 1fr); gap: var(--cards-gap); }
-    .card {
-      background:var(--card-bg);
-      padding:var(--cards-pad);
-      border-radius:var(--cards-radius);
-      box-shadow:var(--cards-shadow);
-    }
-    .tarjeta-e { grid-column: 1 / span 2; grid-row: 1; }
-    .tarjeta-b { grid-column: 3 / span 2; grid-row: 1; }
-    .tarjeta-c { grid-column: 1 / span 1; grid-row: 2; }
-    .tarjeta-d { grid-column: 2 / span 3; grid-row: 2; }
-    .tarjeta-a { grid-column: 1 / -1; grid-row: 3; }
+aside, .card{
+  background:#fff;
+  padding:16px;
+  border-radius:6px;
+  box-shadow:0 4px 10px rgba(0,0,0,.05);
+}
 
+.content{display:grid;gap:16px}
 
-    .box .muted{ color:#666; font-size:.9rem; margin-top:6px }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
 
-  </style>
+.tarjeta-a{grid-column:1/-1}
+.tarjeta-b{grid-column:3/5}
+.tarjeta-c{grid-column:1}
+.tarjeta-d{grid-column:2/5}
+.tarjeta-e{grid-column:1/3}
+</style>
 </head>
 <body>
-  <header class="site" role="banner">
-    <div class="inner" role="presentation">
-      <div class="logo" role="img" aria-label="MiWeb"><a class="brand" href="#">MiWeb</a></div>
+<header>
+  <div class="inner">
+    <div><strong>MiWeb</strong></div>
 
-      <nav class="nav" role="navigation" aria-label="Menú principal">
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Artículos</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </nav>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Artículos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
 
-      <div class="auth" aria-label="Acceso">
-        <a class="btn btn--primary" href="#">Entrar</a>
-        <a class="btn btn--ghost" href="#">Registro</a>
-      </div>
+    <div class="auth">
+      <a href="#">Entrar</a>
+      <a href="#">Registro</a>
     </div>
-  </header>
-
-  <div class="page" role="main">
-    <aside class="box" aria-label="Enlaces útiles">
-      <h3>Enlaces útiles</h3>
-      <p class="muted">Contenido del aside</p>
-    </aside>
-
-    <main class="content" aria-label="Últimos artículos">
-      <h2>Últimos artículos</h2>
-
-      <div class="wrap">
-        <section class="cards" aria-label="Conjunto de tarjetas">
-          <div class="card tarjeta-a">Tarjeta A (100%)</div>
-          <div class="card tarjeta-b">Tarjeta B (50%)</div>
-          <div class="card tarjeta-c">Tarjeta C (25%)</div>
-          <div class="card tarjeta-d">Tarjeta D (75%)</div>
-          <div class="card tarjeta-e">Tarjeta E (50%)</div>
-        </section>
-      </div>
-    </main>
   </div>
+</header>
+
+<div class="page">
+  <aside>
+    <h3>Enlaces útiles</h3>
+    <p>Contenido del aside</p>
+  </aside>
+
+  <main class="content">
+    <h2>Últimos artículos</h2>
+
+    <section class="cards">
+      <div class="card tarjeta-a">Tarjeta A (100%)</div>
+      <div class="card tarjeta-e">Tarjeta E (50%)</div>
+      <div class="card tarjeta-b">Tarjeta B (50%)</div>
+      <div class="card tarjeta-c">Tarjeta C (25%)</div>
+      <div class="card tarjeta-d">Tarjeta D (75%)</div>
+    </section>
+  </main>
+</div>
+
 </body>
 </html>
