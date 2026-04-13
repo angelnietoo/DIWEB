@@ -5,42 +5,35 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ejercicio 4 - Grupo de tarjetas</title>
 <style>
-  /* cuerpo */
+  
   body{
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin:20px;
     background:#f7f8f9;
   }
 
-  /* contenedor de tarjetas */
   .card-set{
     display:grid;
     grid-auto-flow:column;
-    grid-auto-columns:minmax(220px,1fr);
     gap:12px;
     padding:12px;
-    align-items:start;
   }
 
-  /* tarjeta */
   .card{
     display:grid;
-    grid-template-rows: 80px minmax(200px, 1fr) 48px;
-    border:1px solid #e0e6e6;
+    grid-template-rows: 40px 1fr 30px;
+    min-height: 250px;
     background:#fff;
     box-shadow:0 6px 16px rgba(0,0,0,0.06);
   }
 
-  /* header y footer centrados */
-  .card header,
-  .card footer{
+  .card header, .card footer{
     display:grid;
     place-items:center;
     color:#010000;
     background:#91CDF2;
   }
 
-  /* cuerpo */
   .card .body{
     padding:14px;
     color:#222;
@@ -48,14 +41,11 @@
     background:#fff;
   }
 
-  /* reset de márgenes de títulos */
-  h2, h4 { margin:0; font-weight:700; }
-
-  /* responsive */
-  @media (max-width:640px){
-    .card-set{ grid-auto-flow:row; grid-auto-rows:auto; grid-template-columns: 1fr; }
-    .card{ grid-template-rows: 72px minmax(160px, 1fr) 46px; }
+  h2, h4 { 
+    margin:0; 
+    font-weight:700; 
   }
+
 </style>
 </head>
 <body>

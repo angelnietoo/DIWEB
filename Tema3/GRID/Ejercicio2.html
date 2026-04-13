@@ -1,92 +1,49 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ejercicio 2 - Sidebar vertical</title>
-<style>
-  /* Reset */
-  body{
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    margin:0;
-    background:#ffffff;
-    color:#222;
-    min-height:100vh;
-  }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejercicio 2 - Menú vertical</title>
+  <style>
 
-  /* Contenedor principal */
-  .layout{
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 0;
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    align-items: start;
-    background: #fff;
-    overflow: auto;
-  }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
 
-  /* Sidebar (izquierda) */
-  aside{
-    background: #e6e6e6;
-    padding: 28px 20px;
-    border-right: 1px solid #cfcfcf;
-    display: grid;
-    align-content: start;
-    height: 100%;
-  }
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      min-height: 100vh;
+    }
 
-  /* Lista tipo menú usando Grid */
-  ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 6px;
-    width: 100%;
-  }
+    aside {
+      background: #e6e6e6;
+      padding: 24px;
+    }
 
-  /* Cada item: texto a la izquierda y línea fina debajo */
-  li{
-    padding: 4px 0 6px 0;
-    font-weight: 600;
-    color: #222;
-    width: 140px;
-    position: relative;
-  }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* Línea inferior */
-  li::after{
-    content: "";
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: #bdbdbd;
-    margin-top: 6px;
-  }
+    li {
+      padding: 12px 0;
+      border-bottom: 1px solid gray;
+    }
 
-  /* Zona de contenido (derecha) */
-  main{
-    background: #fff;
-    padding: 22px 28px;
-    min-height: 100%;
-  }
-
-  main p{ margin: 0; color:#333; }
-
-  /* Responsive */
-  @media (max-width:640px){
-    .layout{ grid-template-columns: 1fr; height:auto; }
-    aside{ border-right: none; min-height: auto; padding: 18px; }
-    li{ width: 100%; }
-    li::after{ width: 80%; }
-  }
-</style>
+    main {
+      background: #ffffff;
+      padding: 24px;
+    }
+    
+  </style>
 </head>
 <body>
-
-  <div class="layout" role="region" aria-label="Layout con sidebar">
+  <div class="layout">
     <aside>
       <ul>
         <li>Menú 1</li>

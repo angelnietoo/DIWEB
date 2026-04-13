@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ejercicio 8 - Header junto a Sección con tarjetas</title>
+  <title>Ejercicio 8 - Header y main con section y aside</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+
     :root{
       --h:64px;
       --bg:#263640;
@@ -29,7 +30,6 @@
       grid-template-rows:auto 1fr;
     }
 
-    /* Header con altura fija */
     header.site{
       background:var(--bg);
       color:var(--white);
@@ -38,7 +38,6 @@
       height:var(--h);
     }
 
-    /* .inner: contenedor centrado horizontalmente dentro del header */
     .inner{
       display:grid;
       width:min(1200px,96%);
@@ -50,7 +49,6 @@
       justify-self:center;
     }
 
-    /* Este apartado css lo he puesto un poco comprimido ya que ocupa muchas líneas de código */
     .brand{ font-weight:800; padding:.25rem .5rem; color:var(--white); text-decoration:none; border-radius:6px }
     .brand::first-letter{ color:var(--accent) }
     .nav ul{ display:grid; grid-auto-flow:column; gap:1.25rem; list-style:none; justify-content:center; align-items:center }
@@ -61,7 +59,6 @@
     .btn--primary{ background:#2b92e6; color:var(--white) }
     .btn--ghost{ background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,.06) }
 
-    /* Página: layout principal bajo el header */
     .page {
       display:grid;
       width:min(1200px,96%);
@@ -73,7 +70,6 @@
       min-height: calc(100vh - var(--h) - var(--page-vertical-margins));
     }
 
-    /* Aside */
     aside.box{
       background:var(--card-bg);
       padding:16px;
@@ -88,11 +84,9 @@
     aside h3{ font-size:0.95rem; margin-bottom:10px }
     aside p{ font-size:0.9rem;}
 
-    /* Main */
     main.content{ display:grid; gap:16px }
     .content h2{ margin:0; font-size:1.05rem;}
 
-    /* Tarjetas */
     .wrap { width:100%; max-width:920px; }
     .cards { display:grid; grid-template-columns: repeat(4, 1fr); gap: var(--cards-gap); }
     .card {
@@ -107,17 +101,9 @@
     .tarjeta-d { grid-column: 2 / span 3; grid-row: 2; }
     .tarjeta-a { grid-column: 1 / -1; grid-row: 3; }
 
-    /* Responsive */
-    @media (max-width:900px){
-      .page{ grid-template-columns: 1fr; }
-      aside.box{ height:auto; }
-    }
-    @media (max-width:640px) {
-      .cards { grid-template-columns: 1fr; grid-auto-rows: auto; }
-      .tarjeta-e, .tarjeta-b, .tarjeta-c, .tarjeta-d, .tarjeta-a { grid-column: 1 / -1; grid-row:auto; }
-    }
 
     .box .muted{ color:#666; font-size:.9rem; margin-top:6px }
+
   </style>
 </head>
 <body>
@@ -140,7 +126,6 @@
     </div>
   </header>
 
-  <!-- Contenido principal -->
   <div class="page" role="main">
     <aside class="box" aria-label="Enlaces útiles">
       <h3>Enlaces útiles</h3>

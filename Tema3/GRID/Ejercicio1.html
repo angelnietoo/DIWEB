@@ -5,52 +5,36 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ejercicio 1 - Menú horizontal</title>
 <style>
-:root {
-  --accent:#6fd0cf;
-}
 
 body {
-  font-family:system-ui, Arial;
-  padding:20px;
-  background:#f6f8f9;
-}
-
-.wrap {
-  max-width:900px;
-  margin:0 auto;
+  margin: 0;
+  font-family: sans-serif;
 }
 
 nav {
-  display:grid;
-  grid-template-columns:repeat(5, 1fr);
-  gap:0;
-  background:var(--accent);
-  overflow:hidden;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  background: rgba(123,198,199,0.8);
 }
 
 nav a {
-  display:block;
-  padding:14px;
-  text-align:center;
-  text-decoration:none;
-  color:#042;
-  font-weight:normal;
+  display: block;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 
-nav a:hover {
-  background:rgba(123,198,199,0.8);
-}
 </style>
 </head>
 <body>
-<div class="wrap">
 <nav aria-label="Menú principal">
-<a href="#">Inicio</a>
-<a href="#">Servicios</a>
-<a href="#">Acerca</a>
-<a href="#">Blog</a>
-<a href="#">Contacto</a>
+  <a href="#">Inicio</a>
+  <a href="#">Servicios</a>
+  <a href="#">Acerca</a>
+  <a href="#">Blog</a>
+  <a href="#">Contacto</a>
 </nav>
-</div>
 </body>
 </html>

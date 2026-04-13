@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Prueba DAW2 – HTML&CSS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Story+Script&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="site-header">
+      <h1>Prueba DAW2 - HTML&amp;CSS</h1>
+    </header>
+
+    <nav class="side-left" aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li><a href="#inicio" class="nav-btn">Inicio</a></li>
+        <li><a href="#cursos" class="nav-btn">Cursos</a></li>
+        <li><a href="#contacto" class="nav-btn">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <main class="content" id="inicio">
+      <section class="cards-wrap" id="cursos">
+        <h2>Cursos disponibles</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="imgbox" aria-hidden="true"></div>
+            <h3>HTML &amp; CSS</h3>
+            <a class="card-cta" href="#">Ver más</a>
+          </article>
+
+          <article class="card">
+            <div class="imgbox" aria-hidden="true"></div>
+            <h3>JavaScript</h3>
+            <a class="card-cta" href="#">Ver más</a>
+          </article>
+
+          <article class="card">
+            <div class="imgbox" aria-hidden="true"></div>
+            <h3>Diseño Web</h3>
+            <a class="card-cta" href="#">Ver más</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="table-section">
+        <h2>Precios y disponibilidad</h2>
+        <table class="prices">
+          <thead>
+            <tr>
+              <th>Tramo horario</th>
+              <th>Curso</th>
+              <th>Nivel</th>
+              <th>Horas</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mariana</td>
+              <td>HTML &amp; CSS</td>
+              <td>Básico</td>
+              <td>40</td>
+              <td>Abierto</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>JavaScript</td>
+              <td>Medio</td>
+              <td>60</td>
+              <td>Cerrado</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4" class="text-right">Total</td>
+              <td>100</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section class="form-section">
+        <h2>Formulario de inscripción</h2>
+        <form action="#" novalidate>
+          <input type="text" name="nombre" placeholder="Nombre y apellidos" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <div class="row">
+            <input type="date" name="fecha" placeholder="dd / mm / aaaa">
+            <select name="modalidad">
+              <option value="">Online / Presencial</option>
+              <option value="online">Online</option>
+              <option value="presencial">Presencial</option>
+            </select>
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" name="acepto"> Acepto términos
+          </label>
+
+          <textarea name="comentarios" rows="4" placeholder="Comentarios"></textarea>
+
+          <button type="submit" class="submit-btn">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <aside class="side-right">
+      <p>Información adicional</p>
+    </aside>
+
+    <footer class="site-footer">
+      <small>© 2025 TechAcademy</small>
+    </footer>
+  </div>
+</body>
+</html>

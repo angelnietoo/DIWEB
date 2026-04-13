@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ejercicio 9 - MiWeb completa</title>
+  <title>Ejercicio 9 - Página completa</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -21,7 +21,6 @@
       --surface-border: rgba(0,0,0,0.06);
     }
 
-    /* Reset y layout base */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
@@ -32,7 +31,6 @@
       min-height:100vh;
     }
 
-    /* Utilidades reutilizables */
     .container{width:var(--container-max);margin:0 auto;}
     .surface{
       background:var(--card-bg);
@@ -42,38 +40,32 @@
       border:1px solid var(--surface-border);
     }
     
-    /* A partir de este apartado css lo he puesto todo un poco comprimido ya que ocupa muchas líneas de código */
     .hstack{display:grid;grid-auto-flow:column;gap:var(--gap);align-items:center}
 
-    /* Header */
     header.site{background:var(--bg);color:var(--white);height:var(--h);display:block}
     .inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;height:100%}
     .brand{font-weight:800;padding:.25rem .5rem;color:var(--white);text-decoration:none;border-radius:6px}
     .brand::first-letter{color:var(--accent)}
 
-    /* Navegación / auth */
     .nav ul, .footer-links{list-style:none;padding:0;margin:0}
     .nav ul{display:grid;grid-auto-flow:column;gap:1.25rem;justify-content:center;align-items:center}
     .nav a, .footer-links a{display:inline-block;text-decoration:none;color:var(--muted);padding:.35rem .45rem;border-radius:6px}
     .nav a:hover, .footer-links a:hover{color:var(--white);background:rgba(255,255,255,.04);text-decoration:none}
 
-    /* Botones */
     .auth{display:grid;grid-auto-flow:column;gap:.6rem;align-items:center}
     .btn{padding:.45rem .75rem;border-radius:8px;font-weight:600;display:inline-block;min-width:72px;text-align:center;text-decoration:none}
     .btn--primary{background:#2b92e6;color:var(--white);border:0}
     .btn--ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,.06)}
 
-    /* Página: aside + main */
     .page{display:grid;grid-template-columns:220px 1fr;gap:20px;width:var(--container-max);margin:18px auto;padding:0 .5rem;align-items:start}
     aside.box{height:100%;display:flex;flex-direction:column;justify-content:flex-start}
-    aside.box{ /* aplicar surface a aside */ background:var(--card-bg);padding:var(--pad);border-radius:var(--cards-radius);box-shadow:var(--cards-shadow);border:1px solid var(--surface-border)}
+    aside.box{ background:var(--card-bg);padding:var(--pad);border-radius:var(--cards-radius);box-shadow:var(--cards-shadow);border:1px solid var(--surface-border)}
     aside h3{font-size:.95rem;margin-bottom:10px}
     aside p{font-size:.9rem;color:#333}
 
     main.content{display:grid;gap:16px}
     .content h2{margin:0;font-size:1.05rem;color:#222}
 
-    /* Tarjetas */
     .wrap{width:100%;max-width:920px;overflow:auto}
     .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--cards-gap);min-width:920px}
     .card{background:var(--card-bg);padding:var(--pad);border-radius:var(--cards-radius);box-shadow:var(--cards-shadow);border:1px solid var(--surface-border);display:grid}
@@ -83,7 +75,6 @@
     .tarjeta-d{grid-column:2/ span 3;grid-row:2}
     .tarjeta-a{grid-column:1/-1;grid-row:3}
 
-    /* Footer */
     .site-footer{background:var(--bg);color:var(--white);padding:15px 0 5px}
     .footer-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;align-items:start;width:var(--container-max);margin:0 auto;}
     .footer-col h4{margin:0 0 .6rem 0;font-size:1rem;font-weight:700;color:var(--white)}
@@ -93,26 +84,10 @@
     .footer-contact a:hover{color:var(--white)}
     .footer-bottom{border-top:1px solid rgba(255,255,255,0.04);margin-top:18px;padding-top:14px;text-align:center;color:rgba(255,255,255,0.7);font-size:.9rem}
 
-    /* Responsive */
-    @media (max-width:920px){
-      .cards{min-width:720px}
-      .page{grid-template-columns:200px 1fr}
-    }
-    @media (max-width:760px){
-      .footer-inner{grid-template-columns:1fr;gap:18px}
-      .cards{min-width:520px}
-    }
-    @media (max-width:420px){
-      :root{--pad:12px;--gap:.6rem;--cards-gap:12px}
-      .brand{padding:.2rem .4rem}
-      .btn{min-width:64px;padding:.35rem .6rem}
-    }
-
     .box .muted{color:var(--muted-dark);font-size:.9rem;margin-top:6px}
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="site" role="banner">
     <div class="container inner" role="presentation">
       <a class="brand" href="#" aria-label="MiWeb">MiWeb</a>
@@ -132,7 +107,6 @@
     </div>
   </header>
 
-  <!-- Contenido: aside y main -->
   <main class="page" role="main">
     <aside class="box surface" aria-label="Enlaces útiles">
       <h3>Enlaces útiles</h3>
@@ -140,7 +114,7 @@
     </aside>
 
     <section class="content" aria-label="Últimos artículos">
-      <h2>Contenido destacado</h2>
+      <h2>Últimos artículos</h2>
       <div class="wrap">
         <div class="cards" aria-label="Conjunto de tarjetas">
           <div class="card tarjeta-a">Tarjeta 1</div>
@@ -153,7 +127,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer" role="contentinfo" aria-label="Pie de página">
     <div class="footer-inner">
       <div class="footer-col">

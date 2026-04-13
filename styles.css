@@ -1,0 +1,103 @@
+:root{
+  --accent:#2b7a78;
+  --muted:#f4f4f4;
+  --card-bg:#ffffff;
+  --gap:1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Layout principal con CSS Grid y áreas nombradas */
+.page{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns: 220px 1fr 240px;
+  grid-template-rows: auto 1fr auto;
+  gap:var(--gap);
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  padding:1rem;
+  background:linear-gradient(180deg,#fbfbfb,#fff);
+  box-sizing:border-box;
+}
+
+header{ grid-area: header; padding:1rem 1.5rem; background:var(--accent); color:white; border-radius:10px; }
+nav{ grid-area: nav; padding:1rem; }
+main{ grid-area: main; padding:1rem; }
+aside{ grid-area: aside; padding:1rem; }
+footer{ grid-area: footer; padding:1rem; text-align:center; color:#555; }
+
+/* Aside centrado vertical y horizontalmente */
+aside{ display:flex; align-items:center; justify-content:center; background:var(--muted); border-radius:8px; }
+
+/* Estilos del nav: enlaces con apariencia de botones (sin usar <button>) */
+.nav-list{ display:flex; flex-direction:column; gap:0.6rem; }
+.nav-list a{
+  text-decoration:none;
+  display:inline-block;
+  padding:0.6rem 0.9rem;
+  border-radius:8px;
+  background:#ffffff;
+  color:var(--accent);
+  border:2px solid var(--accent);
+  text-align:center;
+  font-weight:600;
+}
+.nav-list a:visited{ background:#e6f6f5; color:#0b4f4c; border-color:#0b4f4c; }
+.nav-list a:hover{ transform:translateY(-3px); box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+
+/* Main: sección con Flexbox para las tarjetas */
+.cards-section{ margin-bottom:1.2rem; }
+.cards{
+  display:flex;
+  gap:1rem;
+  align-items:flex-start;
+}
+.card{
+  background:var(--card-bg);
+  border-radius:10px;
+  padding:0.8rem;
+  box-shadow:0 6px 18px rgba(0,0,0,0.04);
+  flex:1 1 0;
+  display:flex;
+  flex-direction:column;
+  gap:0.6rem;
+}
+.card img{ width:100%; height:auto; border-radius:6px; object-fit:cover; }
+.card h3{ margin:0; font-family:'Story Script', cursive; font-size:1.2rem; }
+.card .cta{ align-self:flex-start; padding:0.5rem 0.8rem; border:none; border-radius:6px; background:var(--accent); color:white; cursor:pointer; }
+
+/* Tabla con filas impares/pares con colores distintos */
+table{ width:100%; border-collapse:collapse; margin-top:1rem; }
+th, td{ padding:0.6rem 0.8rem; border:1px solid #eaeaea; text-align:left; }
+tr:nth-child(odd){ background:#ffffff; }
+tr:nth-child(even){ background:#f8fdfd; }
+
+/* Formulario */
+form{ background:#fff; padding:1rem; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.03); }
+.form-row{ display:flex; gap:0.8rem; margin-bottom:0.6rem; }
+.form-row .field{ flex:1; display:flex; flex-direction:column; }
+input[type="text"], input[type="email"], input[type="date"], select, textarea{
+  padding:0.5rem; border-radius:6px; border:1px solid #ddd; font-size:0.95rem; resize:vertical;
+}
+label{ font-size:0.9rem; margin-bottom:0.25rem; }
+.form-actions{ display:flex; gap:0.6rem; align-items:center; margin-top:0.5rem; }
+.primary-btn{ padding:0.6rem 0.9rem; border-radius:6px; border:none; background:var(--accent); color:white; cursor:pointer; }
+
+/* Responsive: max-width 768px */
+@media (max-width:768px){
+  .page{ grid-template-columns: 1fr; grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer"; }
+  .cards{ flex-direction:column; }
+  nav{ order:0; }
+  aside{ order:3; }
+}
+
+/* Extra micro-styling */
+h1{ margin:0 0 0.3rem 0; }
+p.lead{ margin:0; opacity:0.9; }

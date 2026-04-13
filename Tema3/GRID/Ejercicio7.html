@@ -2,112 +2,95 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Actividad 7 - Header</title>
+  <title>Ejercicio 7 - Header Optimizado</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --h:64px;
-      --bg:#263640;
-      --muted:#9fb0bd;
-      --accent:#3fa9ff;
-      --white:#fff;
-      --gap:1rem;
+    
+    :root {
+      --h: 64px;
+      --bg: #263640;
+      --muted: #9fb0bd;
+      --accent: #3fa9ff;
+      --white: #fff;
+      --gap: 1rem;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-      color:#111;background:#fff;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: "Montserrat", sans-serif;
     }
 
-    /* Header */
-    header.site{
-      background:var(--bg);
-      color:var(--white);
-      display:grid;
-      place-items:center;
+    header.site {
+      background: var(--bg);
+      color: var(--white);
+      display: grid;
+      justify-items: center; 
     }
 
-    /* Contenedor interior */
-    .inner{
-      display:grid;
-      width:min(1200px,96%);
-      grid-template-columns:auto 1fr auto;
-      align-items:center;
-      gap:var(--gap);
-      height:var(--h);
+    .inner {
+      display: grid;
+      width: min(1200px, 96%);
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: var(--gap);
+      height: var(--h);
     }
 
-    /* Logo */
-    .brand{
-      font-weight:800;
-      padding:.25rem .5rem;
-      color:var(--white);
-      border-radius:6px;
+    .brand {
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.2rem;
     }
-    .brand::first-letter{ color:var(--accent) }
+    .brand::first-letter { color: var(--accent); }
 
-    /* Navegación */
-    .nav ul{
-      display:grid;
-      grid-auto-flow:column;
-      gap:1.25rem;
-      list-style:none;
-      justify-content:center;
-      align-items:center;
+    .nav ul {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 1.25rem;
+      list-style: none;
+      justify-content: center;
     }
-    .nav a{
-      color:var(--muted);
-      padding:.35rem .45rem;
-      border-radius:6px;
-    }
-    .nav a:hover{ color:var(--white); background:rgba(255,255,255,.04) }
 
-    /* Botones */
-    .auth{
-      display:grid;
-      grid-auto-flow:column;
-      gap:.6rem;
-      align-items:center;
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: .35rem .45rem;
+      border-radius: 6px;
+      transition: 0.2s;
     }
-    .btn{
-      padding:.45rem .75rem;
-      border-radius:8px;
-      font-weight:600;
-      text-align:center;
-      text-decoration:none;
-    }
-    .btn--primary{ background:#2b92e6; color:var(--white) }
-    .btn--ghost{ background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,.06) }
+    .nav a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
 
-    /* Responsive */
-    @media (max-width:720px){
-      .inner{
-        height:auto;
-        grid-template-columns:1fr auto;
-        grid-template-rows:auto auto;
-        grid-template-areas:
-          "logo auth"
-          "nav  nav";
-        gap:.5rem;
-      }
-      .logo{ grid-area:logo; justify-self:start }
-      .auth{ grid-area:auth; justify-self:end }
-      .nav{ grid-area:nav; justify-self:stretch }
-      .nav ul{ justify-content:start; gap:1rem }
-      .btn{ min-width:0; padding:.35rem .5rem; font-size:.95rem }
+    .btn {
+      padding: .45rem .85rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
+    
+    .btn--primary { 
+      background: #2b92e6; 
+      color: var(--white); 
+    }
+    
+    .btn--ghost { 
+      color: var(--muted); 
+      border: 1px solid rgba(255,255,255,0.15); 
+    }
+
   </style>
 </head>
 
 <body>
-  <header class="site" role="banner">
-    <div class="inner" role="presentation">
-      <div class="logo" role="img" aria-label="MiWeb">
+  <header class="site">
+    <div class="inner">
+      <div class="logo">
         <a class="brand" href="#">MiWeb</a>
       </div>
 
-      <nav class="nav" role="navigation" aria-label="Menú principal">
+      <nav class="nav" aria-label="Principal">
         <ul>
           <li><a href="#">Inicio</a></li>
           <li><a href="#">Artículos</a></li>
@@ -115,7 +98,7 @@
         </ul>
       </nav>
 
-      <div class="auth" aria-label="Acceso">
+      <div class="auth">
         <a class="btn btn--primary" href="#">Entrar</a>
         <a class="btn btn--ghost" href="#">Registro</a>
       </div>
